@@ -11,7 +11,7 @@ var square4 = square(4);                         //codeLine 7
 // the execution context is created in 2 phases (memory component creation and the code execution phase(code component) )
 
 // in memory phase js will scan thru whole code and allocate memory to all the variables and functions
-// in code execution phase js iwll once again scan thru whole code and execute line by line 
+// in code execution phase js will once again scan thru whole code and execute line by line 
 
 // Js execution Process Visualisation 
         // for better understanding refer "02ExecutionContext/EXCONT.png"
@@ -52,11 +52,11 @@ var square4 = square(4);                         //codeLine 7
 
     // here we notice every time a func invocation is reached a new exec context is created 
         // and there is possibility of internal context creation inside an already created context 
-        // to manage all this js The Call Stack exists
+        // to manage all this in js, The Call Stack exists
         //CALL STACK is a stack that manages the creation, deletion and management of Execution Context 
             // When js prgrm is executed Global Execution Context is pushed into this call stack
-                    // and new execution context are stacked upon this and when done it is popped out of the Call stack
-                    // here when new EC is in top of stack it takes over exection control  and when it is popped 
+                    // and new execution context(EC) are stacked upon this and when done execution it is popped out of the Call stack
+                    // here when new EC is in top of stack it takes over execution control  and when it is popped 
                         // control goes back to previous Stack or EC creation causing code containing Context.. 
 
     // *Thereby Call Stack maintains the order of execution of execution contexts*
