@@ -60,3 +60,5 @@ var square4 = square(4);                         //codeLine 7
                         // control goes back to previous Stack or EC creation causing code containing Context.. 
 
     // *Thereby Call Stack maintains the order of execution of execution contexts*
+
+// also note that in memory phase variables are stored as undefined ( undefined is a place holder for allocated space till it is assigned with a value)
