@@ -50,8 +50,35 @@
         var e = 100;
         var e = 150; // can be redeclared
         e = 200; // vlue modified 
+        // let e = 100;  // syntax error e already declared 
            
         let f = 220;
         f = 250; // can be reassigned with another value 
         // let f = 230; // but doesnt allow redeclaration
             // gives syntax error: Identifier 'f' is already declared 
+
+// const -- const is even more strict than let 
+        // it is also hoisted and stored in a separate memory and has a temporal dead zone like let
+
+    // in additon to this it has 2 more specifications like :- 
+        //1) const shuld be declared and assigned at the same time 
+            // const l; // gives error syntax error (missing intializer cons declaration)
+            // l = 1000; // we should assign a value at declaration 
+            const l = 1000;
+
+        //2) const cannot be reassigned it is a constant value which cannot be modified 
+            // l = 1500; // gives type error: Assignment to constant variable 
+            // C] Type error: Assignment to constant variable 
+                // const is a type of constant variable and we are trying to modify it hence the error
+        
+// Usage of var, let and const 
+    // 1) const :- It is recommended to use "const" wherever possible to avoid unexpected errors
+    // 2) let   :- If not const use let as u can avoid the undefined hoisting errors of var declared variables 
+    // 3) var   :- Mostly avoid usage, if used be very conscious of the possible errors it might arise 
+
+    // Even if we use const and let the temporal dead zone related error might mess up things 
+    // the best practise to avoid these errors declarations and intialisations on the top of the code before any data manipulation
+    // thereby we shrink the temporal dead zone phase almost to zero as temporal dead zone only exist upto the intialisation of variables and functions 
+
+// in case of let and const other than the above concepts, scope also has a lot of difference (block scope) 
+// lets discuss that in the next lesson 
