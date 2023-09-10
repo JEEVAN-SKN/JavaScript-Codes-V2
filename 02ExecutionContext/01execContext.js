@@ -61,4 +61,9 @@ var square4 = square(4);                         //codeLine 7
 
     // *Thereby Call Stack maintains the order of execution of execution contexts*
 
-// also note that in memory phase variables are stored as undefined ( undefined is a place holder for allocated space till it is assigned with a value)
+// also note that in memory phase variables are stored as undefined 
+// also undefined is a place holder for variable's allocated space till it is assigned with a value)
+
+// js is a loosely typed lang(or)weakly typed lang because wit doesnt attach its variables to any datatype(flexibiity of datatype, can change datatype anytime we want)
+
+// and even though we can assign "var a = undefined" it has no specific purpose hence not recommended to use 

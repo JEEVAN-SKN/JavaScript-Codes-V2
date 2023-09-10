@@ -15,7 +15,7 @@
 // Here single threaded means that only one command is executed at a time
 //  and synchronous means that these single commands are executed in a specific order 
 
-//  Asynchronous parts comes in ajax and other stuff which we will discudd later 
+//  Asynchronous parts comes in ajax and other stuff which we will discuss later 
 
 
 
