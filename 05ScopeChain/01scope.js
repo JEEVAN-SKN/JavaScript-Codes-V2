@@ -17,8 +17,9 @@ a();
 // c(); // but when i try to execute func c it says not defined because we are now out of the scope(EC) where func c was declared 
 // here when we invoke func c , js checks it in global scope where func c is not defined 
 
+
 // therefore here scope is like parent child environent where child can inherit from parent but parent cannot use childs specific contents
-// in other words whatever var or func you use must be present in current scope(EC) or Parent Scope(EC)
+// in other words whatever variable and function you use must be present in current scope(EC) or Parent Scope(EC)
 
 // lexical refers to heirarchy (or) in sequence in code scopes 
 // in above code we can say func c is lexically inside the func a as func c is declared inside the scope{} of func a 
