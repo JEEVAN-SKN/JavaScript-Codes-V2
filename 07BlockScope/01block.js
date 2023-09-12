@@ -106,7 +106,7 @@ console.log(e); //as we are now outside the block, output is : 200
 
 // But When applied in reverse like var decl in outer scope and let declare in block scope no erroe comes up
 
-    var g = 25;  //this code works fine 
+    var g = 25;  //this code works fine in this scenario  
     {
         let g = 35;   // here even if variable declaration for same nameed variable is different, we have let type of declaration 
                         // which is block scoped and also it is fine to redeclare var type variable declarations
