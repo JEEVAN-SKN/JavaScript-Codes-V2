@@ -19,7 +19,7 @@
 //Block Scope is the scope of the block I.E :- 'all the variables and functions that we can access inside this block 
 
 //**REMEMBER** // var declaration variables are global scoped as well as function scoped because variable created inside of a function, it will not be accessible outside the function.
-// whereas let and const type declared variabled are function scoped as well as block scope inside a block (we will discuss block scope in detail later) /
+// whereas let and const type declared variabled are function scoped as well as block scope inside a block
 
 // now lets see what does it mean "let" and "const" are block scope 
  {
@@ -49,16 +49,24 @@ var d = 230;
 }
 console.log(d); //but eventhough we call var d outside it is still the vakue of inner var d 
 // because both inner var d and outer d are in same global scope and hence inner var d shadowed outer var d in the block scope
-// the value of var d in gloabl scope is changed 
+// the value of var d in global scope is changed 
+// normally shadowing shouldnt modify the value except in that particular scope 
+//but that doesnt work with var declaration bcs var is global and function scoped but not block scoped 
+
+//this wouldnt have worked if we put a function instead of just a block bcs now it is function scope whose working we have already learnt thru the
+// working of different EC's
+
 
 // but this is not the case in let and const 
 
-let e = 200; // this is hoisted // therefore var declaration varibles are global scoped as well as function scoped because variable created inside of a function, it will not be accessible outside the function.
-// whereas let and const type declared variabled are function scoped as well as block scope inside a block (we will discuss block scope in detail later)and stored inside the separate memory space ("script" in js )
+let e = 200; // this is hoisted and stored inside the separate memory space ("script" in js )
 {
-    let e = 240; 
-    console.log(e);
+    let e = 240; // as this is inside a block it is hoisted and stored in a separate memory space ("block"in js) rather than previous "script" space 
+    console.log(e);  // here inside block scope the local var value "shadows" the script memory spave value 
+        // outputs:240
 }
-console.log(e);
+console.log(e); //as we are now outside the block, output is : 200
+// here unalike var declared variable, both let based vars are in two different scopes ("script" and "block") hence shadowing doesnt change its value 
+
 
 
