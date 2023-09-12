@@ -130,4 +130,4 @@ console.log(e); //as we are now outside the block, output is : 200
     // all scope rules apply same with arrow function too
 
 
-// In next lesson we will discuss about Closures
+// In next lesson we will discuss about Closures in detail
