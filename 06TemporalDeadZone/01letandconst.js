@@ -20,7 +20,7 @@
 
         // console.log(b); // gives above referenced error as cannot access before initialization
         let b = 10; // eventhough it is hoisted we couldnt access it as undefined like last case 
-        // it is because it is hoisted in another memory part(script in browser console) not the global object
+        // it is because it is hoisted in another memory part("script" in browser console) not the global object
         // both let and const are hoisted in this another memory part
       
         // and as they are hoisted not in global object "this.b" ot "window.b" will ouptut undefined either before or after initialised

@@ -21,6 +21,11 @@ a();
 // therefore here scope is like parent child environent where child can inherit from parent but parent cannot use childs specific contents
 // in other words whatever variable and function you use must be present in current scope(EC) or Parent Scope(EC)
 
+// this above characteristics is present in the FUNCTION SCOPE (where functions are declared)
+
+// therefore var declaration varibles are global scoped as well as function scoped because variable created inside of a function, it will not be accessible outside the function.
+// whereas let and const type declared variabled are function scoped as well as block scope inside a block (we will discuss block scope in detail later)
+
 // lexical refers to heirarchy (or) in sequence in code scopes 
 // in above code we can say func c is lexically inside the func a as func c is declared inside the scope{} of func a 
 // i.e func a is lexical parent of func c
@@ -38,6 +43,9 @@ a();
 // until it reaches Global Ec's lexical environment , even when not found in Global Ec's memory component it proceeds to Global Ec's parent reference which is null
 // as Global Ec's parent reference is null , hence the variable or func is output as not defined in console
 // For visual understanding check out image : "05ScopeChain/ScopeChain.png"
+
+// but if there are variables of same name in both local memory and parent Ec memeory then the local memory value will be printed ..
+    // ths is called shadowing of variables (we will discuss shadowing later in detail)
 
 // **Therefore this process of chaining in between lexical environment and references of outer parent scope is called the "Scope Chain"**
 
