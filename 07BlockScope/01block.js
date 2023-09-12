@@ -47,7 +47,7 @@ var d = 230;
     var d = 250;
     console.log(d); //gives output as 250 bcs inner d var shadows(modifies) the outer var 
 }
-console.log(d); //but eventhough we call var d outside it is still the vakue of inner var d 
+console.log(d); //but eventhough we call var d outside it is still the value of inner var d 
 // because both inner var d and outer d are in same global scope and hence inner var d shadowed outer var d in the block scope
 // the value of var d in global scope is changed 
 // normally shadowing shouldnt modify the value except in that particular scope 
@@ -68,5 +68,65 @@ let e = 200; // this is hoisted and stored inside the separate memory space ("sc
 console.log(e); //as we are now outside the block, output is : 200
 // here unalike var declared variable, both let based vars are in two different scopes ("script" and "block") hence shadowing doesnt change its value 
 
+// the child parent relnship we learnt in different funcion arised Ec's i.e the function scope also has shadowing 
+//when one function executes and needs a var value it checks it on local memory and if not found then goes to outer scope 
+// if both local scope and outer scope has same var name , shadowing occurs and local variable shadows the outer scope variable
+
+// Block scope also follows lexical scope 
+
+//each and every block has its own lexical scope 
+    let f = 20;
+    {
+        let f = 200;
+        console.log(f); //prints 200
+        {
+            let f = 2000;
+            console.log(f); //prints  2000
+        }
+    }
+    console.log(f); //prints 20
+
+
+
+// this is basically shadowing, but there are some instances where errors may occur in shadowing 
+//ILLEGAL SHADOWING
+// these are called "Illegal shadowing"
+// lets discuus them - if we have declared a var in let style and inside block we redeclared it in var style then will shadowing occur there???
+
+// If you create a variable in a global scope with the let keyword and another variable with the var keyword in a block scope but the exact same name, it will throw an error.
+
+// let g = 25;  //this code ends up in syntax error
+// {
+//     var g = 35;   // this code arises syntax error :"Identifier f has already been declared"
+// }
+
+//REASON : we know that let declared variable can be reassigned but not redeclared 
+//  so when var is declaring f in blockscope it goes outside to global scope(as var is not blocks scoped) and changes value in global scope 
+// but f is already declared in block separate memory ("script" in js) and wkt let variable cannot be redeclared 
+
+// But When applied in reverse like var decl in outer scope and let declare in block scope no erroe comes up
+
+    var g = 25;  //this code works fine 
+    {
+        let g = 35;   // here even if variable declaration for same nameed variable is different, we have let type of declaration 
+                        // which is block scoped and also it is fine to redeclare var type variable declarations
+    }
+
+
+// all these block scope and shadowing rules apply same to const type of declaration 
+    const k = 35;
+    {
+        const k = 45;
+        console.log(k); //prints 45
+    }
+    console.log(k); //prints 35
+
+    // the above code also work well if block is replaced by function same for let declaration
+        //bcs let and const are block scoped as well as function scoped 
+           
+
+// Common myth: arrow functions work different compared to normal function in case of scopes
+    // arrow function are not different from normal function in case of scope 
+    // all scope rules apply same with arrow function too
 
 
