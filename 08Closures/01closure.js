@@ -1,8 +1,9 @@
 function hi(){
     var b = 10;
+    // console.log(a); /// cannot do as parent doesnt have access to child scope 
     function x(){
        var a = 7;
-       console.log(b);
+       console.log(b); 
     }
     x();
 }
@@ -24,25 +25,61 @@ hi(); // this will print out 7 as expected
 // when the inner funct is over , the EC gets eliminated and now local scope refers to the parent EC execution control line has returned to..
 // Whenevr execution control is passed over to parent func EC , the eliminated Ec returns undefined if the function doesnt have a return command in it
  
-// Flexibility of functions in Javascript 
-  // we can assign functions to a variable 
-    var b = function go(){
+// Flexibility of functions in Javascript
+   // we can assign functions to a variable 
+   var b = function go(){
 
-    }
+   }
 
-  //we can pass functions as parameter for another function 
+   //we can pass functions as parameter for a variable 
 
-    x(function get(){
-      console.log("helo");
-    })
+   hi(function get(){console.log("helo");}) ;  // no sense of logic or use case here though just for knowledge of this way
 
-  // we can retunrn functions 
-
-    function bool(){
-      function bool(){
-        var l = 34;
-        console.log(l);
-        } 
-      return bool;
+   // we can return functions  
+      function abc(){
+        return function give(){
+          console.log("hello buddy");
+        }
       }
+      var hi = abc(); //when abc() is executed it returns the func give() to the var hi 
+      console.log(hi); // prints the fucntion give() body content
+
+      // but what if we execute var hi as a function invokation like -> hi();
+      // it executes the function which is its value 
+      
+      // here another aspect of closures into picture 
+ 
+// lets discuus about closure in depth 
+  // in the BELOW code we assign var e with function bool invocation 
+  // that means when var e is assigned with the return value of func bool() after its execution 
+
+   function bool(){
+        var l = 34;
+        function boo(){ 
+        console.log(l);
+            } 
+        return boo;
+        }
+      var e = bool(); //CODELINE : 1
+    console.log(e); // It prints the function name and body in browser console
+      e();// CODELINE : 2 -- here var l is not available as the all the EC's local memory is gone after CODELINE :1
+      // but even though we get the value of var l printed in the console ?
+    
+    // here var e is assigned with the return value of function bool() but the return value is another function boo()
+    // inside the scope of func bool() , func boo() gets access to parent bool()'s local variable and hence when func boo() is 
+        // is executed it prints the value of var l in the console 
+
+    //but here the execution of function bool() starts and ends within the CODELINE : 1 itself 
+    // therefore after the line of assignment of var e is over , the whole Execution context of both bool() and boo() has eliminated ryt there 
+
+    //but here in the browser consolethe value of l = 34 eventhough the local memory of the function's EC doesnt even exist
+        // Here comes closure into picture 
+        // when the function boo() was returned to as assignment value for the variable e , the function body with its lexical scope was also returned 
+        // thereby from its lexical scope the variable l's value is remembered eventhough execution context is nonexistent no more and thereby printed 
+        //this binding of the function with its lexical scope when returned somehwere even though its execution context has been eliminated is done through the property of closures 
+
+
+
+
+
     
