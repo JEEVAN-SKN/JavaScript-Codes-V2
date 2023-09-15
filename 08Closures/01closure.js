@@ -113,9 +113,37 @@ hi(); // this will print out 7 as expected
           // but  when the func is returned or refrenced, its closure creates a reference to it and hence they are not garbage collected
             // and if any variable is reassigned a new value within thar scope and whne called outside the reference only gives the last reassigned value before the scope was over 
             
+// Closure in nested function (Scope chain)           
 
-                  
+function hero(){
+    var b = 900;
+    function x(){
+      var a = 7;
+      function y(){
+        console.log(a,"and",b);
+      }
+      y()
+    }
+    x()
+}
+hero()
 
+// the above nested function we know that the variabled access works based on the parent child relationship
+// but when function y is being executed , we are both accessing  its parent's as well as its grandparent's scope
+// this two scopes are now closured when we are inside function y's EC.In the browser console's sources-> scope section 
+    // you could see a global scope, local scope of curent EC and 2 closure scope 1) closure(x) 2)closure(hero)
+          // If we return this func y somewhere in global scope variable , function y with its references to these closured scope are also available ...
+          // so therefore closure work the same manner in nested scope and functions too
 
+// //Usage of scopes 
+//  1) Module Design Pattern
+//  2)Currying
+//  3)Function like once 
+//  4)memoize
+//  5)maintaining state in async world 
+//  6)setTimeouts
+//  7)Iterators
+//  8)and many more...
+// we will discuss each one of in detail in future lessons
 
     
