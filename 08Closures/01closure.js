@@ -55,10 +55,10 @@ hi(); // this will print out 7 as expected
 
    function bool(){
         var l = 34;
-        function boo(){ 
+        return function boo(){ 
         console.log(l);
             } 
-        return boo;
+        
         }
       var e = bool(); //CODELINE : 1
     console.log(e); // It prints the function name and body in browser console
@@ -75,10 +75,46 @@ hi(); // this will print out 7 as expected
     //but here in the browser consolethe value of l = 34 eventhough the local memory of the function's EC doesnt even exist
         // Here comes closure into picture 
         // when the function boo() was returned to as assignment value for the variable e , the function body with its lexical scope was also returned 
-        // thereby from its lexical scope the variable l's value is remembered eventhough execution context is nonexistent no more and thereby printed 
+        // thereby from its lexical scope the variable l's value is remembered and is refered to when called outside eventhough execution context is nonexistent no more and thereby printed 
         //this binding of the function with its lexical scope when returned somehwere even though its execution context has been eliminated is done through the property of closures 
 
+// another thing to note 
+    // A]  // return function name(){}
+    // B] //  function name(){} ; return name;        
 
+      // both a and b are same, just different style of writing code 
+
+
+// another important concept that poeple gets confused over closures is that 
+// when function is returned in its closure it is not the real value of the variable that is returned but the reference to the variable in its scope
+
+//let me show a usecasr
+ function zolo(){
+  var a = 100;
+  function y(){
+    console.log(a);
+  }
+  y();
+  a = 1000;
+  return y;
+ }
+  
+ var ball = zolo(); // here the return value of func zolo is func y is assigned to ball (closured with func y's local scope)  
+                              // and also the assignment is only after execution so value of a is printed as 100(due to y() invocation)
+                              // but inside func zolo itslef after var a a in printed its value is changed....
+ ball();// here var ball is executed hence func y is executed 
+              // but what will be the value of var a now 100 or 1000?
+              //most users think it will be 100 bcs assignment of 1000 is only after func y body and as var ball is only assigned with func y's body and closured before the assignment 
+              // but the answer is 1000 
+                  //explanation here val a's value is not stored when func y was closured bit just a reference and that refernce points the stored value in that scope 
+                  // when the scope was ended value of var a has changed to 1000 so when we now refer var a thru closured scope 
+                          // the value will show up as 1000;;
+      // So thereby whenever a execution of a func is finished its Ec and scope is eliminated and garbage collected              
+          // but  when the func is returned or refrenced, its closure creates a reference to it and hence they are not garbage collected
+            // and if any variable is reassigned a new value within thar scope and whne called outside the reference only gives the last reassigned value before the scope was over 
+            
+
+                  
 
 
 
