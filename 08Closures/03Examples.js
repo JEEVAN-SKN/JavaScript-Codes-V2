@@ -105,4 +105,19 @@
                     // ii) used in function currying
                     // iii) used in higher order function like memoize and once
                     // iv)helps in data hiding and encapsulation 
-                //Q8) (counter question for above answer) -> explain data hiding and encapsulation
+
+        //Q8) (counter question for above answer) -> explain data hiding and encapsulation
+                    // data hiding is securing privacy for specific variables thereby they cannot be accessed publicly or other function    
+                                //except the function it is intended to be used (also known as data privacy)
+                    //Example :
+                            // var counter = 0;
+                            // function incrementCounter(){
+                            //     counter++;
+                            // } 
+
+                            // in above code the variable counter is accessible anywhere (public access)
+                            // in order to encapsulate it we can do the below :
+
+                            
+
+        
