@@ -142,4 +142,48 @@
                 // the above code is not scalable, if we want to add more functionalities we need to create more function and retunrn them too
                 // instead we can use constructors functions for the scalability purposes 
 
-                     
+                //Note: I am changin the function name as Timer here for avoiding error while execution
+
+                     function Timer(){ // below is a constructor function
+                        var count = 0;
+                        this.incrementCounter = function () { //anonymous function assigned to a variable
+                            count++;
+                            console.log(count);
+                        }
+                        this.decrementCounter = function () {
+                            count--;
+                            console.log(count);
+                        }
+                     }
+
+                     var count1 = new Timer(); // to create instance use "new" keyword in constructor function
+
+                     count1.incrementCounter(); //output: 1
+                     count1.decrementCounter(); //output: 0
+
+                     var count2 = new Timer(); // creating another new instance
+
+                     count2.incrementCounter(); //output: 1
+                     count2.decrementCounter(); //output: 0
+
+            // so hereby we can add as new methods (functions) for the constructor and use it by creating an instance 
+
+        //Q12) Disadvantages of closures
+                // i) possibility of overconsumption of memory as every time we call a function new memory space for the scope is created 
+                // ii) even though some variables are not to be used they are not being garbage collected till the program expires 
+                // iii) if not handled properly can lead to memory leaks as accumulation of memory overtime may freeze the browser 
+
+        //Q13) (counter question from above answer) what is and how does garbage collector works?
+                     It is a program in js engine or browser which frees up the unutilised memory space (varibaled which are of no use after a point of time)
+                     In other langs like c and c++, the data type, allocation and deallocation of memory is hanled by the programmers but in js most of 
+                        the work is done by js engine, therefore garbage collector comes into picture to handles these memory spaces 
+        
+        //Q14) how does closures and garbage collector relates to each other?
+                     function z() {
+                        var x = 12;
+                        return function b(){  //we know that here function z's lexical scope is closured to function b here(scope chain working)
+                            console.log(x);
+                        }
+                     }
+                    z(); // here as soon as execution is over its Ec will be eliminated from
+                        
