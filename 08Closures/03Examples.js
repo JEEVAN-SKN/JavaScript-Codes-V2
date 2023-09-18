@@ -118,7 +118,8 @@
                     // in above code the variable counter is accessible anywhere (public access)
                     // in order to encapsulate it we can do the below :
 
-                    function counter(){ // we encapsulate the above code by wrapping it inside a function 
+                    function Counter(){ // we encapsulate the above code by wrapping it inside a function 
+                                    // Naming convention recommended to name capitalised for constructor functions 
                         var count = 0;
                         return function incrementCounter(){
                             count++;
@@ -126,14 +127,14 @@
                         }
                     }
                     // console.log(count) --> Error : As count is not in global scope cannot output 
-                    var counter1 = counter();
+                    var counter1 = Counter();
                     counter1(); //it will increment and by adding console log in inner fucntion we can see value of count == 1
                     counter1(); //increments count againg from 1 to 2 
 
         // Q10) from above code whatIif we call counter() function again in another variable does it have same incremented count value??
                 
                     // another invocation of counter() wil create a totally new memory scope afresh it doesnt remember the incremented count value of above code
-                    var counter2 = counter();
+                    var counter2 = Counter();
                     counter2() //again prints value 1 as new count has been created and incremented from 1 to 2 
                     counter2()
         
