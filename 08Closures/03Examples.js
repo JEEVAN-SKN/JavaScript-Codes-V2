@@ -174,9 +174,9 @@
                 // iii) if not handled properly can lead to memory leaks as accumulation of memory overtime may freeze the browser 
 
         //Q13) (counter question from above answer) what is and how does garbage collector works?
-                     It is a program in js engine or browser which frees up the unutilised memory space (varibaled which are of no use after a point of time)
-                     In other langs like c and c++, the data type, allocation and deallocation of memory is hanled by the programmers but in js most of 
-                        the work is done by js engine, therefore garbage collector comes into picture to handles these memory spaces 
+                    //  It is a program in js engine or browser which frees up the unutilised memory space (varibaled which are of no use after a point of time)
+                    //  In other langs like c and c++, the data type, allocation and deallocation of memory is hanled by the programmers but in js most of 
+                    //      the work is done by js engine, therefore garbage collector comes into picture to handles these memory spaces 
         
         //Q14) how does closures and garbage collector relates to each other?
                      function z() {
@@ -185,5 +185,24 @@
                             console.log(x);
                         }
                      }
-                    z(); // here as soon as execution is over its Ec will be eliminated from
-                        
+                    z(); // here as soon as execution is over its Ec will be eliminated from csll stack and all its scope memory is also gone
+                                // thay means variable x and its value no longer exists unless function z() is executing again
+                    var ko = z(); // but of we assigned the function to an variable in global scope now the 
+                                  //returned function b is stored in variable ko wiht its closured scope memory too
+                    ko();
+                        // this variable x memory cannot be garbage collected until we know ther is no invocation of ko in rest of the program like above 
+              //due to closures these kind of memory is overaccumulated thus resulting into other problems but to solve this modern browsers (v8,chrome) have 
+                        // smart garbage collection mechanism where it smartly garbage collectes variables that are not gonne be used ..
+
+        //Q15) Show an example of the smart garbage collection mechanism u mentioned above
+                     function smart() {
+                        var x = 10, y = 15  // two variable x and y declared and assigned values 
+                        return function collect() {
+                            console.log(x); //but only one varible x is used not y //CODELINE: 1
+                        }
+                     }
+                     var h = smart(); // so when function colect() is returned with its closured scope, var x is not garbage collected due to closure
+                     h();                   // but as variable y is not used anywhere it is garbage collected smartly by chrome browser engine 
+                            // you can check this out b placing debugger at CODELINE:1 and console logging var y at that that particular time of execution 
+                                    // it will output reference error as there is no varible y at that time as it has been smartly garbage collected even if 
+                                            // it was the part of the refrenced closure scope                  
