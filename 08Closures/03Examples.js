@@ -114,10 +114,32 @@
                             // function incrementCounter(){
                             //     counter++;
                             // } 
+                console.log("Counter Section code Execution below \n ");
+                    // in above code the variable counter is accessible anywhere (public access)
+                    // in order to encapsulate it we can do the below :
 
-                            // in above code the variable counter is accessible anywhere (public access)
-                            // in order to encapsulate it we can do the below :
+                    function counter(){ // we encapsulate the above code by wrapping it inside a function 
+                        var count = 0;
+                        return function incrementCounter(){
+                            count++;
+                            console.log(count);
+                        }
+                    }
+                    // console.log(count) --> Error : As count is not in global scope cannot output 
+                    var counter1 = counter();
+                    counter1(); //it will increment and by adding console log in inner fucntion we can see value of count == 1
+                    counter1(); //increments count againg from 1 to 2 
 
-                            
-
+        // Q9) from above code what  if we call counter() function again in another variable does it have same incremented count value??
+                
+                    // another invocation of counter() wil create a totally new memory scope afresh it doesnt remember the incremented count value of above code
+                    var counter2 = counter();
+                    counter2() //again prints value 1 as new count has been created and incremented from 1 to 2 
+                    counter2()
         
+        // Q10) Is the abive code good and scalable like if we want to add decrement and other functions too
+
+                // the above code is not scalable, if we want to add more functionalities we need to create more function and retunrn them too
+                // instead we can use constructors functions  for the scalability purposes 
+
+                     
