@@ -51,5 +51,15 @@
 
 
         //NOTE: argument of a function also comes under its scope 
+            function out(b){
+                function inn() {
+                    console.log(a,b);
+                }
+                let a = 10;
+                return inn;
+            }
+            out(6)()  // output: "10 6"
+        // the parameter part of function is also saved in function body during memory phase 
+            // so when we pass argument 6 in 1st () of invocation it is passed and thereby printed in console
 
-        
+      
