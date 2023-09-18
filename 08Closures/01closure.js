@@ -14,9 +14,9 @@ hi(); // this will print out 7 as expected
 
 // A Closure is basically a function combined with its lexical scope (its local memory and reference to parent scope lexical scope)
 
-// form MDN docs closure is a combination of a function bundled together (enclosed) with referneces to its surrounding state(lexicale env)
+// form MDN docs closure is a combination of a function bundled together (enclosed) with references to its surrounding state(lexicale env)
 
-// in above code iside browser console if u place debugger inside fuction x body in sources js script and play execution line by line 
+// in above code inside browser console if u place debugger inside fuction x body in sources js script and play execution line by line 
   // u could see that in scope now has a) global scope b) local scope(current EC's scope) and Closure(hi) 
   // here closure of hi is the binding of current func x wih the lexical env of parent func hi
 
