@@ -27,7 +27,7 @@
         outer()() // outputs:10 // the first () for execution of outer function, the second () is for execution of inner returned function
  
         // there can also be multiple invocation () than two
-        // Q4) what are double ()() in  function invocation
+        // Q4) what are multiple ()() in  function invocation
         function first() {
             var a = 10;
             function second(){
@@ -82,7 +82,7 @@
             var exec = outest()("hello")
             exec();
 
-        //Q6)  what does closure does if there is a presence of same variable names(conflicting names) in differnet scope 
+        //Q7)  what does closure does if there is a presence of same variable names(conflicting names) in differnet scope 
             // Every function forst checks for the required variable in its own scope,if not found then goes to parent scope 
                     //therfore if there is variables with same name in current scope and parent scope 
                                 // the variable in current executing scope is chosen(scope chaining working(shadowing))
@@ -100,13 +100,13 @@
                         // if the var c was not found in the scope of function interior then it choses the var c value in scope of parent funciton exterior
                         // even if not fount ther then it will look out in the global scope or block scope in global level
 
-        //Q7) Advantages of Closure 
+        //Q8) Advantages of Closure 
                     // i) used in module pattern
                     // ii) used in function currying
                     // iii) used in higher order function like memoize and once
                     // iv)helps in data hiding and encapsulation 
 
-        //Q8) (counter question for above answer) -> explain data hiding and encapsulation
+        //Q9) (counter question for above answer) -> explain data hiding and encapsulation
                     // data hiding is securing privacy for specific variables thereby they cannot be accessed publicly or other function    
                                 //except the function it is intended to be used (also known as data privacy)
                     //Example :
@@ -130,16 +130,16 @@
                     counter1(); //it will increment and by adding console log in inner fucntion we can see value of count == 1
                     counter1(); //increments count againg from 1 to 2 
 
-        // Q9) from above code what  if we call counter() function again in another variable does it have same incremented count value??
+        // Q10) from above code whatIif we call counter() function again in another variable does it have same incremented count value??
                 
                     // another invocation of counter() wil create a totally new memory scope afresh it doesnt remember the incremented count value of above code
                     var counter2 = counter();
                     counter2() //again prints value 1 as new count has been created and incremented from 1 to 2 
                     counter2()
         
-        // Q10) Is the abive code good and scalable like if we want to add decrement and other functions too
+        // Q11) Is the above code good and scalable like if we want to add decrement and other functions ? If not how to make it scalable.
 
                 // the above code is not scalable, if we want to add more functionalities we need to create more function and retunrn them too
-                // instead we can use constructors functions  for the scalability purposes 
+                // instead we can use constructors functions for the scalability purposes 
 
                      
