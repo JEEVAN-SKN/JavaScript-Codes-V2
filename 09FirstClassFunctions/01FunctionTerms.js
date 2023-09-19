@@ -57,3 +57,20 @@ a(); // outputs value of a
             //Arguments - used on function invocation
                 //      - passed into function and assigned to the parameters as values 
                 //  onefunc(hi,hello) //here hi and hello are arguments
+
+//First Class Functions 
+    //functions are so beautiful that we can use them as flexible as we want
+    
+        //1) we can assign functions as values to variables
+            var get = function(param1,param2) {
+                console.log(param1,param2);
+            }
+                
+        //2) we can pass functions as arguments into other functions
+            function xyz(){
+                var a = 10;
+            }
+            get(function (){var b = 10},xyz) 
+                        //outputs both function xyz and param1 passed function's body
+        
+        
