@@ -60,7 +60,8 @@ a(); // outputs value of a
 
 //First Class Functions 
     //functions are so beautiful that we can use them as flexible as we want
-    
+    //lets see some of the particular uses of functions in js
+
         //1) we can assign functions as values to variables
             var get = function(param1,param2) {
                 console.log(param1,param2);
@@ -80,4 +81,44 @@ a(); // outputs value of a
                 }
             }
 
-            console.log(give());
+            console.log(give()); // prints function hello body
+                        // note that in node console exectuion it just shows function name but in chrome browser console
+                                //whole function, its name and body is printed in the console 
+        
+    //The above seen flexibity of functions is called first class functions 
+    // A variable value can be assigned to another variable, passed as arguments to a function and also returned from a function
+    // The same way like variables, function can also be done so 
+
+    //Therefore the ability to assign function to a variable, pass as arguments to a functions and returned from a function is called First Class Functions
+    // First Class Functions are also called First Class Citizens 
+    // therefore it is just treating functions equal to values(or) variables which are first class citizens in programming
+    
+    //this comes under a special type of programming named Functional programming 
+            // we had already discusses this in our previous js basics repository("JavaScriptCodes_V2" linked in Readme file of repo)
+
+            //Basically functional programming has 3 rules:
+                    // 1st rule :  keep data and function separate
+                            //Functional prog style 
+                                    function addBonus(score){  //function doesnt need to know of any variables
+                                        // it just adds 45 to whatever value given (hence functions and variables kept separate )
+                            return score+45;      // less time debugging
+                            }                         // no global variable stuff 
+                            // as shown above in fucn prog->  first rule :  keep data and function separate
+
+                    // 2nd rule: dont frequently change state 
+
+                            jeevan = "hi";
+                            jeevan = "hello";
+                            jeevan = "how r u ";
+
+                            // in func prog style
+                            jeevan = "hi";
+                            jeevan2 = "hello";
+                            jeevan3 = "how r u ";
+                            // even if new var declared avoid chamnging state of an already declared var 
+
+                    // 3rd rule: treat functions as first class citizens (assign,pass argument,retunrn,use inside other func)
+
+ //Note we are using var declaration majoritu here in code examples
+        // but these properties apply the same for let and const  in addition to their block scope and other rules 
+        
