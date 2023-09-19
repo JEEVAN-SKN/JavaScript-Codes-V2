@@ -73,4 +73,11 @@ a(); // outputs value of a
             get(function (){var b = 10},xyz) 
                         //outputs both function xyz and param1 passed function's body
         
-        
+        //3) we can return functions from functions 
+            var give = function () {
+                return function hello() {
+                    console.log("hi");
+                }
+            }
+
+            console.log(give());
