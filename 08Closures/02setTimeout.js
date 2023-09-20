@@ -1,5 +1,5 @@
 // we already know about setTimeouts through which we make a particular execution wait for some specified time
-// but there is a common misunderstanding inthe working of setTimeout, lets dive deep into it
+// but there is a common misunderstanding in the working of setTimeout, lets dive deep into it
 
 function x(){
     var i = 1;
@@ -8,7 +8,7 @@ function x(){
     }, 1000);
     console.log("hi"); // this will execute first 
 }
-x(); // the above is due to the default asyncronous behaviour of js wiht the help of event loop 
+x(); // the above is due to the asyncronous behaviour of js when faced with web api or blocking statements with the help of event loop 
     // which we had earlier discussed
 
 // Now what if we need to print 1 to 6, which printed after a time interval equal to theri value 
@@ -34,8 +34,14 @@ x(); // the above is due to the default asyncronous behaviour of js wiht the hel
     // this happens because of the working of setTimeout based on closures
 
 // working of setTimeout 
-            //as javascript is asynchronous by default when faced with a setTimeout js takes this function to be executed with its closured scope 
+            //as javascript is synchronous by default when faced with a setTimeout which is a blocking function js takes this function to be executed with its closured scope 
                 // and stores it in another area till the timer count is completed 
+
+                        //ASYNCHRONOUS BEHAVIOUR OF JS: normally besides call stack , there is a callback queue and a  web api or blocking statement handler
+                                //all functions executions are stacked in call stack and whn faced with a web api or blocking methods or function like setTimeout or promises
+                                    //these functions are handled by the web api handler and put the callback function(the function to be executed after wait time) in callback queue
+                                        // and when all other nonblocking or non web api functions are executed and then when call stack is empty , js engine checks in callback queue and executes them
+
             // Here in above working the functions closured scope is also saved which will hepl us to remember local scope variables of hat function
                     // but through we are inly referencing to the scope not saving its value , so in the first 1 sec timeout is finished thru the function we refer to the var j
                         //but even before 1 sec timer finished js has already looped all 6 times thru the loop created 6 setTimeouts and their refernces in closure 
