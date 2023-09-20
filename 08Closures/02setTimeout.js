@@ -37,10 +37,12 @@ x(); // the above is due to the asyncronous behaviour of js when faced with web 
             //as javascript is synchronous by default when faced with a setTimeout which is a blocking function js takes this function to be executed with its closured scope 
                 // and stores it in another area till the timer count is completed 
 
-                        //ASYNCHRONOUS BEHAVIOUR OF JS: normally besides call stack , there is a callback queue and a  web api or blocking statement handler
+                        //ASYNCHRONOUS BEHAVIOUR OF JS: normally besides call stack , there is a callback queue(task queue) and a  web api or blocking statement handler
                                 //all functions executions are stacked in call stack and whn faced with a web api or blocking methods or function like setTimeout or promises
                                     //these functions are handled by the web api handler and put the callback function(the function to be executed after wait time) in callback queue
                                         // and when all other nonblocking or non web api functions are executed and then when call stack is empty , js engine checks in callback queue and executes them
+                                //NOTE that promises and web apis are really handled by job queue rather than callback queue(job queue has priority over task queue when call stack is empty)
+                                    //we'll discuss callback functions and event loop in detail in later sessions 
 
             // Here in above working the functions closured scope is also saved which will hepl us to remember local scope variables of hat function
                     // but through we are inly referencing to the scope not saving its value , so in the first 1 sec timeout is finished thru the function we refer to the var j
