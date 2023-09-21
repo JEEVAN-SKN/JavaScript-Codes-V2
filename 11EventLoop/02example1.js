@@ -6,7 +6,7 @@
             //     console.log("Callback");  
             //  }, 5000);           //sets timer using timer functionality of web api
 
-                        // after the timer for 5 seconds is over the registered callback function is pushed into "CallBack Queue"
+                        // after the timer for 5 seconds is over the registered callback function is pushed into "CallBack Queue" after removing it from web API section of browser
                 // the task of taking this callback function from CALLBACK QUEUE to callstack is done by event loop
                     //callback queue is also known as task queue/message queue/macrotask queue
             // event loop comes in picture here ... it always checks if the call stack is empty and whn empty it check the callback queue
@@ -21,6 +21,19 @@
 
 // Example 2 
 
+            console.log("Start"); // as usual as above orints using console of webapi
 
-            
+            document.getElementById("btn").addEventListener("click", function cb() {
+                console.log("CallBack");
+            })  //the above is done by accessing the DOM apis 
+
+            //the callback function is registered in the web api and an "click" event is attached to it
+            // whenever a click event occurs, the callback function is pushed to the callback queue and then event loop brings it to the callstack when it is empty
+            //but in case of eventlisteners they are not removed form webapi when they are pushed into the callback queue
+                //coz whenver a "click" event occurs it should again push this callback func to the callback queue 
+                    //hence it is always present in webapi till end of program , unless it is removed by using removeEventListener() method
+
+            //Refer picture "11EventLoop/Eg2explanation.png" for better understanding
+
+
 
