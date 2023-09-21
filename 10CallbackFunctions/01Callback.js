@@ -26,4 +26,12 @@ x(function (){     //here we have passed anonymous functions as argument into fu
 // in above code due to callback functions asynchronous behaviour comes into picture(js engine doesnt wait for callback functions to execute, the store the 
     // callback function of setTimeout in another area and moves on to next function execution )
 
-    
+// Blocking the main thread :
+    // here the main thread is nothing but the execution in call stack when some fucntions which takes a lot of time to be processes liek web api,setTimeout,callbacks
+    // they are blocking all other small easy functions for the the timethey tak to process(blocking  the main thread)
+    // javacript is non-blocing asynchronous hence this callback is stores somewhere for the timebeing and all other functions are executed 
+    // and when callstack is empty them executes the callback functions from the callback queue they were sent to
+    // all these working comes under event loop, callback(task) queue , job queue and web api handler we'll discuss them in upcoming event loop sessions 
+
+
+
