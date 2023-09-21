@@ -47,5 +47,8 @@ attachEventListeners();
                 //when there is multiple eventlisteners and their own related scopes, they take a lot of memory space and may result into slowdown of program execution
                 //hence it is always recommended to remove eventlisteners in order to avoid memory leaks
         //But this is understandable for something referred in global objects window but why for html components, 
-                //arent these evenlisterners go out a
+                //arent these evenlisterners go out when a html component unmounts ?
+                    //these will be done automatically in modern browsers
+                        //but legacy browsers like IE doesnt have these mechanism and hence lead to memory leaks
+                        
                 
