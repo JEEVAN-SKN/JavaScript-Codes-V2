@@ -173,7 +173,10 @@
                 // i) possibility of overconsumption of memory as every time we call a function new memory space for the scope is created 
                 // ii) even though some variables are not to be used they are not being garbage collected till the program expires 
                 // iii) if not handled properly can lead to memory leaks as accumulation of memory overtime may freeze the browser 
-
+                      // A Memory leak can be defined as a piece of memory that is no longer being used or required by an application but for some reason
+                            //  is not returned back to the OS.In simple terms it is forgotten data forever waiting to be used.
+                     // A memory leak reduces the performance of the computer by reducing the amount of available memory. 
+                     
         //Q13) (counter question from above answer) what is and how does garbage collector works?
                     //  It is a program in js engine or browser which frees up the unutilised memory space (varibaled which are of no use after a point of time)
                     //  In other langs like c and c++, the data type, allocation and deallocation of memory is hanled by the programmers but in js most of 
