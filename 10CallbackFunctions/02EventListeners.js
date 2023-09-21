@@ -45,4 +45,6 @@ attachEventListeners();
                 // here in case of Eventlisteners, the button can be clikes anytime and for printing the n'th time it has been clicked
                     //the closured scope of th eventlistener is not removed after its execution, it is being tracked and kept alive as long as the program exists
                 //when there is multiple eventlisteners and their own related scopes, they take a lot of memory space and may result into slowdown of program execution
-                //hence it is always recommended to remove eventlisteners
+                //hence it is always recommended to remove eventlisteners in order to avoid memory leaks
+
+                
