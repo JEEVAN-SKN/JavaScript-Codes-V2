@@ -17,12 +17,11 @@
 
     //Therefore browser provide all the access to require functionalities to the call stack from its Web API 
             //through the global object "window"(incase of chrome)
+
+        //checkout the figure "11EventLoop/Web API's.png" for pictoral representation
     
         //eventhough we dont write window.setTimeout(), just when we are in global scope all methods we access is through the window object
             // window.setTimeout() === setTimeout()
             // window.console.log() === window.console.log()
 
-
-
-
- 
+// we will discuss the working of some basic js programs in next session
