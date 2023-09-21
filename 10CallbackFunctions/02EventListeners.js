@@ -46,5 +46,6 @@ attachEventListeners();
                     //the closured scope of th eventlistener is not removed after its execution, it is being tracked and kept alive as long as the program exists
                 //when there is multiple eventlisteners and their own related scopes, they take a lot of memory space and may result into slowdown of program execution
                 //hence it is always recommended to remove eventlisteners in order to avoid memory leaks
-
+        //But this is understandable for something referred in global objects window but why for html components, 
+                //arent these evenlisterners go out a
                 
