@@ -50,7 +50,9 @@
             .then(function cbf() {  //once promise is resolved the passed callback function mentioned in "then" is executed
                 console.log("netflix api");   
             }) // alike setTimeout the callback function of fetch is registered in the webapi, suppose we get response within 50ms (<5s of timer)
-                //then this callback is now pushed into a separate queue named "MICROTASK QUEUE"                
+                //then this promise based callback is now pushed into a separate queue named "MICROTASK QUEUE"    
+                        //Microtask queue is also called Job queue or promise job queue
+
                       // Note:Callback functions like promises and mutation observer(checks whether any mutation in DOM tree, if present execute a callback function)
                                 //goes into microtask queue 
                         //all other callback functions are pushed into callback queue
@@ -68,6 +70,6 @@
                     //for better understanding refer image "11EventLoop/Eg3explanation.png"
 
         // We have now discussed in depth about the working of browser,web apis with js engine's call stack through global object window
-        // In next session we'll discuss about the architecture and working of js engine in detail
+        // In next session we'll discuss about the architecture and working of js engine and javascript runtime in detail
                     
                 
