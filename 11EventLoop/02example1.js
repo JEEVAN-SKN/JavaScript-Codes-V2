@@ -46,6 +46,28 @@
                 console.log("Cb settimout");//after timer ends pushed to callback queue
             },5000)         // an then when callsatck empty executed wiht help of event loop
 
-            fetch("https://api.netflix.com").then(function cbf() {
+            fetch("https://api.netflix.com") // fetch method basically requests an api call and returns a "PROMISE" 
+            .then(function cbf() {  //once promise is resolved the passed callback function mentioned in "then" is executed
                 console.log("netflix api");   
-            }) // fecth method basically requests an api call and returns a "PROMISE" 
+            }) // alike setTimeout the callback function of fetch is registered in the webapi, suppose we get response within 50ms (<5s of timer)
+                //then this callback is now pushed into a separate queue named "MICROTASK QUEUE"                
+                      // Note:Callback functions like promises and mutation observer(checks whether any mutation in DOM tree, if present execute a callback function)
+                                //goes into microtask queue 
+                        //all other callback functions are pushed into callback queue
+                //the above setTimeout also expires and hence timer callback func is pushed inside the callback queue
+
+                //the only difference between microtask and callback queue is that microtask queue has higher priority over callback queue
+                //when callstack is empty event loop checks for both callback and microtask quueu but pushes tasks in microtask queue first into the callstack
+                    
+                //INTERVIEW question:   
+                      // 1) Eventhough there are multiple task in microtask queue and only single task in callback queue, only after executing all microtasks, the callback queue is considered
+                      // 2) Sometimes the microtask inside the microtask queue itself creates another microtask and appends to the queue, and this continues
+                                    //then event loop will also continously push them into callstack and ignores callback queue till microtask queue is over
+                                        //this condition is called the STARVATION of callback queue
+
+                    //for better understanding refer image "11EventLoop/Eg3explanation.png"
+
+        // We have now discussed in depth about the working of browser,web apis with js engine's call stack through global object window
+        // In next session we'll discuss about the architecture and working of js engine in detail
+                    
+                
