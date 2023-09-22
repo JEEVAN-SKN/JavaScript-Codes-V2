@@ -9,7 +9,7 @@
                         // after the timer for 5 seconds is over the registered callback function is pushed into "CallBack Queue" after removing it from web API section of browser
                 // the task of taking this callback function from CALLBACK QUEUE to callstack is done by event loop
                     //callback queue is also known as task queue/message queue/macrotask queue
-            // event loop comes in picture here ... it always checks if the call stack is empty and whn empty it check the callback queue
+            // event loop comes in picture here ... it always checks if the call stack is empty and whn empty it check the callback queue and also the microtask queue(we''ll discuss microtask queue inlater example)
                         // if any callback function is pushed into it form registered phase in web api then event loop brings it to call stack
                                 //and then the callstack executes it quickly
 
@@ -35,5 +35,17 @@
 
             //Refer picture "11EventLoop/Eg2explanation.png" for better understanding
 
+// We have seen how js engine access the setTimeoutm, DOM API, console
+                // in case of accessing fetch() method , the working is different, let's see 
 
+//Example 3:                
 
+            console.log("start");   // as usual executes trough console
+
+            setTimeout(function cbt() {  //registers cbt() in web api and sets timer for 5000 in web api
+                console.log("Cb settimout");//after timer ends pushed to callback queue
+            },5000)         // an then when callsatck empty executed wiht help of event loop
+
+            fetch("https://api.netflix.com").then(function cbf() {
+                console.log("netflix api");   
+            }) // fecth method basically requests an api call and returns a "PROMISE" 
