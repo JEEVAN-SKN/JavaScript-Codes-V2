@@ -36,9 +36,16 @@
             //Now the AST is passed on to compilation phase
                 //Initially js was interpreted language for browsers purpose but nowadasy js engines use both compiler and interpreter for optimisation
                 //Whether js is interpreted or compiled is dependent on the js engine(either pure interpretation or JIT compilation)
-                    //JIT stands for Just in time compilation
+                    //JIT stands for "Just in time" compilation, it is capability of js engines to use bith compiler as well as interpreter getting best of both worlds
 
-                    
+            //Compilation and execution goes hand-in-hand
+                    //js interpreter interpets code and coberts it into bytecode which moves to exectuin phase
+                            //while interpreting it takes help form compiler to optimise the code  
+                                    //these interpretation and compiltion may be done in single phase or multiple phases 
+                                    //it alsocontain several algorithms to potimise the code
+                            //as it optimises the code while interpreting(runtime) hence it is called just-in-time compilation
+                                    //in some engines there is aot(Ahead of time)compilation -- compiles code which is to be executed soon in advance optimistically
+                     
             
                  
                 
