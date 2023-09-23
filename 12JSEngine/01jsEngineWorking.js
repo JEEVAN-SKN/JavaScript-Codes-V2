@@ -68,7 +68,7 @@
                 // Their garbage collector is named "Orinoco" which uses the Mark&Sweep algo
                         // and also another garbage collector named "Oilpan" for another purpose
                 
-                    //Refer V8 engine's architecture in picture ""
+                    //Refer V8 engine's architecture in picture "12JSEngine/V8.png"
     
 
                 
