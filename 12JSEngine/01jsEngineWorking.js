@@ -45,11 +45,32 @@
                                     //it alsocontain several algorithms to potimise the code
                             //as it optimises the code while interpreting(runtime) hence it is called just-in-time compilation
                                     //in some engines there is aot(Ahead of time)compilation -- compiles code which is to be executed soon in advance optimistically
-                     
+                     // Compiler also does some other optimisation through methods like Inlining, Inline Caching, Copy elision
+
+
             //Execution 
-                // with the machine code js engine executes with help of heap memory(for storage) and call stack for execution and garbage collector
+                // with the machine code js engine executes with help of heap memory(for memory assigning) and call stack for execution and garbage collector
+                    //Garbage collector uses a algorithm named Mark & Sweep algorithm which is also widely used in other applications
+
+        //So the js Runtime Environment has jsengine, webapi, eventloop, Callback and job queue
+                    //the Js engine has phases like Parsing, compilation, execution as mentioned above 
+                            // and also contains the call stack, memory heap, memory heap
+                                    //refer picture "12JSEngine/Js engine.png" for representation
+
+    // All the mechanism we have talked about is very generic and each js engine would have is own unique mechanism but more or like we discussed above
+        //The Compilation logic or optimisation between chome's V8 maybe totally differnet than mozilla's spidermonkey
+
+// V8 engine
+    //Every js browser tries to create a js engine which is the fastest
+            //But as of now Google Chrome's V8 is th fastest js engine 
+                //It has interpreter named "Ignitor"
+                //It's optimising compiler is named "Turbofan"
+                // Their garbage collector is named "Orinoco" which uses the Mark&Sweep algo
+                        // and also another garbage collector named "Oilpan" for another purpose
                 
-                 
+                    //Refer V8 engine's architecture in picture ""
+    
+
                 
 
         
