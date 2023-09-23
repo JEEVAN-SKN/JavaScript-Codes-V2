@@ -46,7 +46,9 @@
                             //as it optimises the code while interpreting(runtime) hence it is called just-in-time compilation
                                     //in some engines there is aot(Ahead of time)compilation -- compiles code which is to be executed soon in advance optimistically
                      
-            
+            //Execution 
+                // with the machine code js engine executes with help of heap memory(for storage) and call stack for execution and garbage collector
+                
                  
                 
 
