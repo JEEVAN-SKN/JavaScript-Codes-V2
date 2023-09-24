@@ -98,10 +98,34 @@
                         //Copy Elision
                           //It's a compiler optimization technique that eliminates unnecessary copying/moving of objects.
 
-
             //Execution 
                 // with the machine code js engine executes with help of heap memory(for memory assigning) and call stack for execution and garbage collector
-                    //Garbage collector uses a algorithm named Mark & Sweep  algorithm which is also widely used in other applications
+                    //Garbage collector uses a algorithm named Mark & Sweep  algorithm which is also widely used in other 
+                        
+                        //Mark and sweep algorithm 
+                            // it has two phases namely mark and phase
+
+                            // Phase 1: Mark Phase 
+                            // When an object is created, its mark bit is set to 0(false). In the Mark phase, 
+                            // we set the marked bit for all the reachable object (or the objects which a user can refer to) to 1(true).
+                                    //Algo:
+                                    // Mark(root)
+                                    // If markedBit(root) = false then
+                                    //                      markedBit(root) = true
+                                    //                                   For each v referenced by root Mark(v)
+
+                            // Phase 2: Sweep Phase 
+                            // As the name suggests it “sweeps” the unreachable objects i.e. it clears the heap memory for all the unreachable objects.
+                            // All those objects whose marked value is set to false are cleared from the heap memory, for all other objects (reachable objects) the marked bit is set to true. 
+                            // Now the mark value for all the reachable objects is set to false since we will run the algorithm (if required) and 
+                            // again we will go through the mark phase to mark all the reachable objects. 
+                                    //Algo:
+                                    //Sweep()
+                                    // For each object p in heap
+                                    // If markedBit(p) = true then
+                                    //                   markedBit(p) = false
+                                    //                                  else
+                                    //                                      heap.release(p)
 
         //So the js Runtime Environment has js engine, webapi, eventloop, Callback and job queue
                     //the Js engine has phases like Parsing, compilation, execution as mentioned above 
