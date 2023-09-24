@@ -30,7 +30,7 @@
             endDate = new Date().getTime()  //updates with current time at each iteration of while loop
         }
 
-        console.log("While loop ecpires ");
+        console.log("While loop expires ");
 
                 //the console output will be :- Start
                                             //  End    
@@ -42,6 +42,23 @@
 
     //Therefore in js setTimeout only assures it runs atleast after specified time but not exactly after that in these scenarios
 
+    //The above Blocking main thread must not be done in practical scenarios but here we did it for understanding the concurrency model in js 
+            //Therefore js is a single threaded synchronous language but in case of these methods it behaves asynchrounously
+            
+//the setTimeout method for 0 seconds also may execute after 10 seconds according to the code amount 
+        //but there are scenarios where we can us 0 second setTimeout method
+            //incase if we need a specific code to be executed after all other code is executed but cannot place it in last section of code 
+                    //or when we need to prioritise specfic function execution 
+        
+        // console.log("\n the below code for showcasing 0 second setTimeout usage");
+
+        // function Hi() {
+        //     console.log("i need to be executed atlast");
+        // }
+
+        // setTimeout(Hi,0);
+
+        // console.log("Hi function execution only after me");
 
 
     
