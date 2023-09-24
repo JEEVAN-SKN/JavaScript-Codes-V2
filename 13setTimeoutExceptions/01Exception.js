@@ -56,10 +56,12 @@
         //     console.log("i need to be executed atlast");
         // }
 
-        // setTimeout(Hi,0);
+        // setTimeout(Hi,0);   
 
         // console.log("Hi function execution only after me");
 
+    //these works due to the concurrency model of js 
+        //js is a synchronous single threaded  language but behaves asynchronous with the help of concurrency model
 
     
 
