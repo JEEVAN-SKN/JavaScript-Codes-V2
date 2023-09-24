@@ -30,4 +30,17 @@
             endDate = new Date().getTime()  //updates with current time at each iteration of while loop
         }
 
+        console.log("While loop ecpires ");
+
+                //the console output will be :- Start
+                                            //  End    
+//after 10 seconds comes out of while loop->//  While loop expires  
+  //then setTimeout funtion                 //  Callback
+
+
+    // in the above code eventhough the timer expires after 1 second the other code executes for 10 seconds only after
+        //which callstack is empty and only then eventloop pushes callback function into callstack from callback queue
+
+    
+
 
