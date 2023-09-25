@@ -73,18 +73,47 @@
             }
             return output
         }
-
+        console.log('\n');
         console.log(calculate(radius,area))   //calculate is the higher order function 
         console.log(calculate(radius,circumference)) //area, circumference, diameter is the callback function (argument and return)
         console.log(calculate(radius,diameter))    
 
                     //this is the optimised code based on functional programming approacg
-                        //where we created a reusable component (funtions)
+                        //where we created a reusable component (funtions) each having a single responsibility
                     //It gives the same output as the first code 
+    // In interview this style of code will be expected .
 
-        // in interview this style of code will be expected .
-        
+    //Higher Order Functions
+        //the logic of calculate() is similar to map function which is higher order function in js
+        console.log('\n');
+        console.log(radius.map(area));
+        console.log(radius.map(circumference));   //same outputs as above
+        console.log(radius.map(diameter));  //eventhough map function has some more checks is is similar to what we did in above code
+
+        //but the only difference is that in map() is taking radius.map lik radius is a object containing a method
+                    // radius.map(area)
+        //while in calculate() we're taking radius as a an argument
+                    // calculate(radius,area)
+
+        //For making that possible we should add calculate() as a method of array in js "prototype"
+
+        Array.prototype.calculate = function(formula){
+            const output = []             //we dont need to put radius as argument 
+            for(i=0;i<radius.length;i++){   //bcs radius is called as object whose method calculate is executed with an argument area(or)diameter(or)circumference
+                output.push(formula(radius[i]))
+            }
+            return output
+        }
+
+        console.log("\n");
+        console.log(radius.calculate(area));
+        console.log(radius.calculate(circumference));
+        console.log(radius.calculate(diameter));
+
+            //now calculate method is added to the array prototype and can be used anywhere in arrays same way as map() is called
+
             
+
 
         
 
