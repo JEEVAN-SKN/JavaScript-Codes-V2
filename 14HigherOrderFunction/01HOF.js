@@ -112,9 +112,10 @@
 
             //now calculate method is added to the array prototype and can be used anywhere in arrays same way as map() is called
 
-            
+//Recap: 
+//higher order function - function whose argument is another function or returns a function 
+        // function passed as an argument and retunrned is callback function 
+        // function to whom  func is passed as argument and which returns is the higer order function 
+            //these are only possible because functions are the first class citizens in js
 
-
-        
-
-
+    //In next session we will discuss about map(), filter() and reduce()
