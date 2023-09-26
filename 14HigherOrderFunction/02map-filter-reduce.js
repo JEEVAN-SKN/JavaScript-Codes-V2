@@ -1,3 +1,5 @@
+//map(), filter(), reduce() are the commonly used higher order functions in js, let's discuss about them today
+
 // map() function is used to transform every element of an array
 
     // for eg 
@@ -47,21 +49,29 @@ console.log(output3);  //["101","1",11","10,"110"]
 const output4 = arr.map( function binary(x) {
     return x.toString(2)
 })
-console.log(output4);
+console.log(output4); //["101","1",11","10,"110"]
 
 //B)//anonymous function
 const output5 = arr.map(function (x) {
     return x.toString(2)
 })
-console.log(output5);
+console.log(output5); //["101","1",11","10,"110"]
 
 //C)//arrow functions style
+
     //i)// arrow function
     const output6 = arr.map((x) => {
         return x.toString(2)
     })
-    console.log(output6);
+    console.log(output6); //["101","1",11","10,"110"]
     
-    //ii)//arrow function without retunrn keyword as only single line of code 
-    const output7 = arr.map((x) => x.toString(2))
-    console.log(output7);
+    //ii)//arrow function without return keyword as only single line of code 
+    const output7 = arr.map(x=> x.toString(2))
+    console.log(output7); //["101","1",11","10,"110"]
+
+//filter() - used to filter an array according to given condition (If logically true that value is output and if false just ignores)
+
+    //filter out odd values from array
+
+    const output8 = arr.filter( x => x % 2)
+    console.log(output8);  //[ 5, 1, 3 ]
