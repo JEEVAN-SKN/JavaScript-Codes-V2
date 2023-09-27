@@ -93,7 +93,8 @@ console.log(output5); //["101","1",11","10,"110"]
      console.log(out2); //[5, 6]
 
 //reduce()  - does some operation with all elements of array and comes  up with a single element output(it can be a single word,value,object ...)
-     //ex: to find sum or greatest number
+
+//ex: to find sum 
 
     //normal approach for 
 
@@ -106,12 +107,43 @@ console.log(output5); //["101","1",11","10,"110"]
     }
     console.log(findSum(arr));  // 17
     
-    //reduce funtion
+    //reduce() approach
 
-    const output = arr.reduce(function (acc,curr){   //curr is the value of each iteration (can have any name)
+    const sum = arr.reduce(function (acc,curr){   //curr is the value of each iteration (can have any name)
         acc += curr                                  // acc is the value assigned form curr and atlast return as output 
         return acc
     },0)        //curr should be initiated here after a "," (same structure of setTimeout but here initial assignment not timer)
-    console.log(output);  // 17 same output as above normal approach
+    console.log(sum);  // 17 same output as above normal approach
     
-    
+//eg - maximum (greatest number of array
+
+    // normal approach
+
+    const maxNum = x => {
+        let max = 0;
+        for(i=0;i<arr.length;i++){
+            if(max<arr[i]) max = arr[i] 
+        }
+        return max
+    }
+    console.log(maxNum(arr));  // 6  //greatest number of array "arr"
+
+    //reduce() approach
+
+    const max = arr.reduce( (max,curr) => {
+        if(max<curr) max=curr
+        return max
+    },0) 
+    console.log(max);  //6 // gives same output 
+
+//extra example for higher order functions
+    const users = [
+        { firstname: "akshay", lastname: "saini", age: 26 },
+        { firstname: "donald", lastname: "trump", age: 75},
+        { firstname: "elon", lastname: "musk", age: 50},
+        { firstname: "jeevan", lastname: "S K N", age: 20},
+        { firstname: "subramanian", lastname: "thugperfect", age: 20}
+    ]
+
+    const fullName = users.filter( x => firstname.x +' '+ lastname.x)
+    console.log(fullName);
