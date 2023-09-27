@@ -71,7 +71,20 @@ console.log(output5); //["101","1",11","10,"110"]
 
 //filter() - used to filter an array according to given condition (If logically true that value is output and if false just ignores)
 
-    //filter out odd values from array
+  //filter out odd values from array
+     function isOdd(x){
+        console.log(x%2)   // 1 1 1 0 0 
+         return x % 2    //gives false (0 remainder) if x divisible by 2(even), true (1 remainder) if not divisible(odd)
+     }  
+     const output8 = arr.filter(isOdd)
+     console.log(output8); //[ 5, 1, 3 ]
 
-    const output8 = arr.filter( x => x % 2)
-    console.log(output8);  //[ 5, 1, 3 ]
+        //arrow function way
+    const output9 = arr.filter( x => x % 2)
+    console.log(output9);  //[ 5, 1, 3 ]
+
+  //filter out even values from an array
+
+      const out1 = arr.filter(x => x % 2 ===0)
+      console.log(out1);  //[ 2, 6 ]
+    
