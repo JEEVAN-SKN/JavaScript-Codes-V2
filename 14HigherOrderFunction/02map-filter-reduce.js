@@ -145,5 +145,19 @@ console.log(output5); //["101","1",11","10,"110"]
         { firstname: "subramanian", lastname: "thugperfect", age: 20}
     ]
 
-    const fullName = users.filter( x => firstname.x +' '+ lastname.x)
-    console.log(fullName);
+    // print out the list of fullnames (firstname, lastname)
+        //in this case map() function can be used 
+
+    const fullName = users.map( x => x.firstname +' '+ x.lastname) 
+    console.log(fullName);      //here in function return we didnt put list [] but still the fullnames came in list
+                //becoz map just modifies anything given to it, here we put "firstname + + lastname" hence each objects of list changed into fullname
+        // output: 
+                //[
+                // 'akshay saini',
+                // 'donald trump',
+                // 'elon musk',
+                // 'jeevan S K N',
+                // 'subramanian thugperfect'
+                // ]
+
+    
