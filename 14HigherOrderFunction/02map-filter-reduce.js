@@ -93,7 +93,8 @@ console.log(output5); //["101","1",11","10,"110"]
      console.log(out2); //[5, 6]
 
 //reduce()  - does some operation with all elements of array and comes  up with a single element output(it can be a single word,value,object ...)
-
+            // in map we get transformed version of what is iterated over(if itrate list then we get list)( if array then we get transformed array)
+            // in filter we get the filtered version of same element(array or list) we iterat over 
 //ex: to find sum 
 
     //normal approach for 
@@ -109,10 +110,10 @@ console.log(output5); //["101","1",11","10,"110"]
     
     //reduce() approach
 
-    const sum = arr.reduce(function (acc,curr){   //curr is the value of each iteration (can have any name)
-        acc += curr                                  // acc is the value assigned form curr and atlast return as output 
-        return acc
-    },0)        //curr should be initiated here after a "," (same structure of setTimeout but here initial assignment not timer)
+    const sum = arr.reduce(function (acc,curr){   //curr is the value of each iteration over given array or list(etc)(can have any name)
+        acc += curr                                  // acc is the output we need , it is intially assigned a value or whatever we want
+        return acc                                                         //and later assigned with what we need as output
+    },0)        //acc should be initiated here after a comma (same structure of setTimeout but here initial assignment not timer)
     console.log(sum);  // 17 same output as above normal approach
     
 //eg - maximum (greatest number of array
@@ -145,7 +146,7 @@ console.log(output5); //["101","1",11","10,"110"]
         { firstname: "subramanian", lastname: "thugperfect", age: 20}
     ]
 
-    // print out the list of fullnames (firstname, lastname)
+//Q1) print out the list of fullnames (firstname, lastname)
         //in this case map() function can be used 
 
     const fullName = users.map( x => x.firstname +' '+ x.lastname) 
@@ -160,4 +161,27 @@ console.log(output5); //["101","1",11","10,"110"]
                 // 'subramanian thugperfect'
                 // ]
 
-    
+//Q2) print the the unique ages and their number of occurences in the list "users" like { 26:1, 75:1, 50:1, 20:2 }
+         //for reference    // const users = [
+                            //     { firstname: "akshay", lastname: "saini", age: 26 },
+                            //     { firstname: "donald", lastname: "trump", age: 75},
+                            //     { firstname: "elon", lastname: "musk", age: 50},
+                            //     { firstname: "jeevan", lastname: "S K N", age: 20},
+                            //     { firstname: "subramanian", lastname: "thugperfect", age: 20}
+                            // ]
+
+        //here we need an object which contains key-value pairs where key is unique age and value is the no. of occurences  
+            // we iterate over a  list "users" but we need a total different thing  (not transformed or filtered version of the given element to iterate over)
+                    //hence we use reduce here to get the output we want
+                        //we will initiate acc(any name) argument(first argument) with an empty object so that we fill it during iteration
+
+        const uniqAge = users.reduce( (acc,curr) => {
+            if(acc[curr.age]){
+                acc[curr.age] = ++acc[curr.age]
+            }
+            else{
+                acc[curr.age] = 1
+            }
+            return acc
+        }, {} )
+        console.log(uniqAge);
