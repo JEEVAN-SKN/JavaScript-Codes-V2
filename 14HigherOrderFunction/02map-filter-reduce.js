@@ -176,11 +176,11 @@ console.log(output5); //["101","1",11","10,"110"]
                         //we will initiate acc(any name) argument(first argument) with an empty object so that we fill it during iteration
 
         const uniqAge = users.reduce( (acc,curr) => {
-            if(acc.curr.age){        //this works when there already exists a key named as the current iteration age
-                acc.curr.age = ++acc.curr.age     //it just increments the existing key's value 
+            if(acc.{curr.age}){        //this works when there already exists a key named as the current iteration age
+                acc.{curr.age} = ++acc.{curr.age}     //it just increments the existing key's value 
             }
             else{             //thos condition works first bcos the object acc is empty at first 
-                acc.curr.age = 1  //curr.age i the age and if the age doesnt exist already then creates one key with the age as name and the value intitated to 1
+                acc.{curr.age} = 1  //curr.age i the age and if the age doesnt exist already then creates one key with the age as name and the value intitated to 1
             }
             return acc
         }, {} )  //{} bcs we need an object
