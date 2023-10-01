@@ -188,7 +188,7 @@ console.log(output5); //["101","1",11","10,"110"]
 
 
 
-// get the firstname of all the people who's age is less than 30
+//Q3) get the firstname of all the people who's age is less than 30
 
         //to segregrate people below age 30 we can use filter()
                 //users.filter((x)=> x.age < 30)
@@ -198,3 +198,7 @@ console.log(output5); //["101","1",11","10,"110"]
 
                 const ageBel30 = users.filter((x)=> x.age < 30).map((x)=> x.firstname)
                 console.log(ageBel30);  //here we chain map() over filter()
+                
+
+        //the above can be done with reduce() too like below
+            
