@@ -184,4 +184,6 @@ console.log(output5); //["101","1",11","10,"110"]
             }
             return acc
         }, {} )  //{} bcs we need an object
-        console.log(uniqAge);   //  
+        console.log(uniqAge);   // we get an object with key as unique age and value as the no. of occurences
+
+        
