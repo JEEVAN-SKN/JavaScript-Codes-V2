@@ -186,4 +186,15 @@ console.log(output5); //["101","1",11","10,"110"]
         }, {} )  //{} bcs we need an object
         console.log(uniqAge);   // we get an object with key as unique age and value as the no. of occurences
 
-        
+
+
+// get the firstname of all the people who's age is less than 30
+
+        //to segregrate people below age 30 we can use filter()
+                //users.filter((x)=> x.age < 30)
+
+        //to get firstnames of those filtered people we can use map() over filter()
+            //advantage of higher order func: we can chain them one on another
+
+                const ageBel30 = users.filter((x)=> x.age < 30).map((x)=> x.firstname)
+                console.log(ageBel30);  //here we chain map() over filter()
