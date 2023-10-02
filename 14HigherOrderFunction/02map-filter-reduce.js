@@ -208,5 +208,5 @@ console.log(output5); //["101","1",11","10,"110"]
                         acc.push(curr.firstname)
                     }
                     return acc       
-                }, [])
+                }, [])   // [] for creating an empty array
                 console.log(ageBel); // output: [ 'akshay', 'jeevan', 'subramanian' ]
