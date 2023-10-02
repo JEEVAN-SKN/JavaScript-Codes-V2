@@ -198,7 +198,15 @@ console.log(output5); //["101","1",11","10,"110"]
 
                 const ageBel30 = users.filter((x)=> x.age < 30).map((x)=> x.firstname)
                 console.log(ageBel30);  //here we chain map() over filter()
+                    // output: [ 'akshay', 'jeevan', 'subramanian' ]
                 
 
         //the above can be done with reduce() too like below
-            
+
+                const ageBel = users.reduce((acc,curr)=>{
+                    if(curr.age < 30){
+                        acc.push(curr.firstname)
+                    }
+                    return acc       
+                }, [])
+                console.log(ageBel); // output: [ 'akshay', 'jeevan', 'subramanian' ]
