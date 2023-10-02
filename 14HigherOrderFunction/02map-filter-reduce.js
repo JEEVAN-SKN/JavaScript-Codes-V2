@@ -205,7 +205,7 @@ console.log(output5); //["101","1",11","10,"110"]
 
                 const ageBel = users.reduce((acc,curr)=>{
                     if(curr.age < 30){
-                        acc.push(curr.firstname)
+                        acc.push(curr.firstname)  //pushing firstnames who are less than 30 age
                     }
                     return acc       
                 }, [])   // [] for creating an empty array
