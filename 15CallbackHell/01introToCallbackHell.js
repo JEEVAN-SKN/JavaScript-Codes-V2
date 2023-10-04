@@ -41,7 +41,8 @@
                     //if the developer only has knowledge of proceedToPayment func and not of createOrder func then he may not know of the problems arising
                     //we may not know whether the function to which we give our callback functions may contain lot of bugs or other 
                         //the higher order functions may not even call our callback function in some case which we are not aware of 
-                            //we are blindly trusting the higher fucntion 
+                            //we are blindly trusting the higher function
+                            //we dont know if it will be executed more than once  
                                 //thereby when we give our callback function to a higher fuction we are also giving the control over our callbck func to the higher func
                 //this is called inversion of control in callbacks 
                     //in next session we will study how to handle inversion of control and promises 
