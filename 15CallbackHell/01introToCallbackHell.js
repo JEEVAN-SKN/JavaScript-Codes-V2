@@ -45,7 +45,8 @@
                             //we dont know if it will be executed more than once  
                                 //thereby when we give our callback function to a higher fuction we are also giving the control over our callbck func to the higher func
                 //this is called inversion of control in callbacks 
-                    //in next session we will study how to handle inversion of control and promises 
+                    //in next session we will study how to handle inversion of control 
+
     //Recap
         //Importance of callbacks: async programming in js exists bcs of callback functions
         //Issues due to callback: 
