@@ -60,7 +60,7 @@ const promise = fetch(GITHUB_API);
 //if we place a debuger in abive line and checkout sources -> scope in browser, we can find a promise Object with some content
             //refer image '16Promises/promiseobject.png'
     // a promise object has 2 things 
-        //PromiseState: "pending" and "fulfilled" (state of promise)
+        //PromiseState: "pending", "rejected" and "fulfilled" (state of promise)
         //PromiseResult:  stores returned data
 
 console.log(promise);  //OUTPUT: "Promise { <pending> }" in browser
@@ -72,10 +72,51 @@ console.log(promise);  //OUTPUT: "Promise { <pending> }" in browser
     //but if we expand it shows PromiseState:"fullfilled"
         //refer image: "16Promises/promisestate.png"
  //this is because eventhough console.log worked before fulfilling promise
-    //after promise gets data, the promise object is updated 
+    //after promise gets data, the promise object is updated by chrome
         //hence shows "fulfilled"
-        
+        //and the PromiseResult : has the returned data 
+//now we can use the data in the promise through "then"
+promise.then(function (data){
+    console.log(data);   //do whatever manipualtion with that data
+})
+
+//now we have handled the inversion of control
+    //for handling callback hell (pyramid of doom), we can use multiple "then"
+//let createOrd be a predeifned api which takes 1st argument as input and 2nd argument as function to execute
+
+            // createOrd(cart,function(orderId){
+            //     proceedToPayment(orderId, function (paymentInfo) {
+            //         showOrderSummary(paymentInfo, function() {
+            //             updateWalletBalance();
+            //         });
+            //     });
+            // });    //abive code has horizontal growth
+//Promise style
+//    const promise =  createord(cart);
+
+//    promise.then(function (orderId){ proceedToPayment(orderId)})
+                //we know createOrd returns promise hence we can use below code rather than above
+    // createOrd(cart)
+    // .then(function (orderId){
+    //    return proceedToPayment(orderId)   //dont forget to use return, as without retunrn some data might get lost during chaining 
+    // })
+    // .then(function (paymentInfo) {          
+    //    return showOrderSummary(paymentInfo)
+    // })
+    // .then(function (paymentInfo){
+    //    return updateWalletBalance(paymentInfo)
+    // })
+    // .then(paymentInfo => finishPayment(paymentInfo))   //can also use arrow function 
 
 
+    
 
+    
+
+//definiton of promise
+    // placeholder which is filled later with a value(placeholder for ceratainn time until we recieve data)
+    //container for future value
+//MDN perfect definiton
+    //Promise is an object representing the eventual completion or failure of an asynchronous operation
+        //it is a retuned object to which we attach callback functions instead of passing it into another function 
 
