@@ -116,7 +116,12 @@ promise.then(function (data){
 //definiton of promise
     // placeholder which is filled later with a value(placeholder for ceratainn time until we recieve data)
     //container for future value
+
 //MDN perfect definiton
     //Promise is an object representing the eventual completion or failure of an asynchronous operation
         //it is a retuned object to which we attach callback functions instead of passing it into another function 
 
+// in this session we leanrt about consuming a promise which is already defined (fetch())
+        //we assumed createOrder is async func which returns us a promise 
+        
+// in next session we'll learn about how to create our own promise.
