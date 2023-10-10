@@ -108,7 +108,7 @@ promise.then(function (data){
     // })
     // .then(paymentInfo => finishPayment(paymentInfo))   //can also use arrow function 
 
-
+    //thereby we have reduced horizontal growth and eliminate pyramid of doom
     
 
     
