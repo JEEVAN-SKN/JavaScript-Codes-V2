@@ -68,9 +68,13 @@ console.log(promise);  //OUTPUT: "Promise { <pending> }" in browser
     //but js callstack doesnt wait for asyn functions, it just executes the above log function 
                     //therefore when ot logs the promise at that point of time the promise has only been created and not returned with data
                     //hence gives PromiseState as "pending"
+
     //but if we expand it shows PromiseState:"fullfilled"
         //refer image: "16Promises/promisestate.png"
- 
+ //this is because eventhough console.log worked before fulfilling promise
+    //after promise gets data, the promise object is updated 
+        //hence shows "fulfilled"
+        
 
 
 
