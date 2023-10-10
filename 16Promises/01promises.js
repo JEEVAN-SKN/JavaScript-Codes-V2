@@ -51,8 +51,9 @@
 
 //execute the above code in browser
  
-const GITHUB_API = "https://github.com/JEEVAN-SKN/"
-
+const GITHUB_API = "https://api.github.com/JEEVAN-SKN"  //doenst work gives not found error for data
+                                                // just using for showing promise structure
+ 
 // fetch() --fetch() is api to make external call and gives us response as promise 
 
 const promise = fetch(GITHUB_API);
@@ -62,12 +63,13 @@ const promise = fetch(GITHUB_API);
         //PromiseState: "pending" and "fulfilled" (state of promise)
         //PromiseResult:  stores returned data
 
-console.log(promise);  //OUTPUT: "Promise { <pending> }" in node 
- //normally we expect that this gives us a promise with state:"fulfilled" and result with the retunred data
-    //but js callstack doesnt wait for asyn functions, it jist executes the above log function 
-                    //therefore when ot logs te promise at that point of time the promise has only been created and not returned with data
+console.log(promise);  //OUTPUT: "Promise { <pending> }" in browser
+ //normally we expect that this gives us a promise with state:"fulfilled" and result with the returned data
+    //but js callstack doesnt wait for asyn functions, it just executes the above log function 
+                    //therefore when ot logs the promise at that point of time the promise has only been created and not returned with data
                     //hence gives PromiseState as "pending"
-    //but 
+    //but if we expand it shows PromiseState:"fullfilled"
+        //refer image: "16Promises/promisestate.png"
  
 
 
