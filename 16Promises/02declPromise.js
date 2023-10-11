@@ -32,7 +32,7 @@ function validateCart(cart){
    //   return false; //we'll get eroor with message "Cart is not valid" but this is in browser console
                 //user may not notice it, so we need to add catch block s in promise for error handling
                 
-        return true; // as we are just demonstrating , we return true so promise gets fulfilled 
+        return false; // as we are just demonstrating , we return true so promise gets fulfilled 
                 // we'll get output 12345
 
 }
@@ -40,8 +40,15 @@ function validateCart(cart){
 
 
 const buy = createOrder(cart); //here buy is retured with the above created promise 
+ console.log(buy);  //prints promise in pending state as promise have not yet executed (needs 5 secs in this case to finish)
 
 buy.then( function(orderId){  // Whenever a promise is fulfilled and gets data , the below .then and .catch are executed on the data -only once whenever promise gets fulfilled
                                                         // and the promise is unmutable only its data can be used and manipulated                                                                                     
-    console.log(orderId); 
+    console.log(orderId);  //12345
+    console.log(buy); //prints promise with state fulfilled and with content 
+})//output"// Promise { <pending> } //
+           // 12345
+           // Promise { '12345' } //refer image "16Promises/browseroutput.png" fir chrome browser console output 
+.catch(function (err){
+    console.log(err.message);
 })
