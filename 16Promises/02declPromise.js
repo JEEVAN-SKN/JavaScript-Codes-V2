@@ -17,7 +17,10 @@ function createOrder (cart) {
         // logic for create Order 
         const orderId = "12345"; //if it works then orderId is created 
         if (orderId){
-        resolve(orderId);  //if promise is fulfilled, then we retunr orderId as the PromiseData
+            setTimeout(function (){
+                resolve(orderId);   //resolves after 5 seconds to actuate asyn function
+            },5000)
+         //if promise is fulfilled, then we retunr orderId as the PromiseData
         }
     });
     // thereforewhen creatOrder() is called promise is created as above and retunrned  
