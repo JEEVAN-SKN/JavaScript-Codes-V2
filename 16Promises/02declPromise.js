@@ -29,10 +29,10 @@ function createOrder (cart) {
 function validateCart(cart){
         //validation logic 
 
-   //   return false; //we'll get eroor with message "Cart is not valid" but this is in browser console
+   //   return false; //we'll get eroor with message "Cart is not valid" but this comes in browser console as an official js error
                 //user may not notice it, so we need to add catch block s in promise for error handling
-                
-        return false; // as we are just demonstrating , we return true so promise gets fulfilled 
+            // for error sample when catch block is not used refer image ""
+        return true; // as we are just demonstrating , we return true so promise gets fulfilled 
                 // we'll get output 12345
 
 }
