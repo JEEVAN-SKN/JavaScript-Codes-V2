@@ -79,45 +79,61 @@ buy.then( function(orderId){  // Whenever a promise is fulfilled and gets data ,
         });
     };
     //lets create on another function to add more operations for ".then"
-   
+
+   function proceedToPayment(orderId){  // returns another promise 
+    return new Promise(function (resolve,reject){
+        resolve("Payment Successful") //we make is simple for demonstration purpose(no reject for simplicity)
+    })
+   }
+
     const purchase = createOrder(cart);   
 
     buy
-    .then( function(orderId){                                                                                    
+    .then( function(orderId){       // .then again again -> chaining                                                                                
         console.log(orderId);  
-        console.log(purchase); 
+        return orderId;             // always return value tp next .then for avoiding data loss 
     }) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .then( function(orderId){
+        proceedToPayment(orderId);
+    } )
+    .catch(function (err){        //if error occurs in any of the above (.then) (lets take first .then) then error shows up 
+        log(err.message);               // and the secind .then is ignored bcs of error in first .then
+    })
+    .then(function(paymentInfo){  //to make a function thru .then get executed ev
+        console.log(paymentInfo);
+    })
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     .catch(function (err){
         console.log(err.message); 
