@@ -99,9 +99,12 @@ buy.then( function(orderId){  // Whenever a promise is fulfilled and gets data ,
     .catch(function (err){        //if error occurs in any of the above (.then) (lets take first .then) then error shows up 
         log(err.message);               // and the secind .then is ignored bcs of error in first .then
     })
-    .then(function(paymentInfo){  //to make a function thru .then get executed ev
-        console.log(paymentInfo);
-    })
+    .then(function(paymentInfo){  //to make a function thru .then get executed eventhough any error occurs in previous .then's 
+        console.log(paymentInfo);       //then add that function with .then after the catch block 
+    })                              // any .then after an catch block will be executed independent of whether the upper catch block 
+                                                // catches error or not unless there is another catch block after it
+                            // therefore catch block can only stop the .then executions above it, it's error cannot block the .then executions below it
+
     
 
 
