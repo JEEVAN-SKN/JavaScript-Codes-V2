@@ -38,8 +38,6 @@ function validateCart(cart){
 
 }
 
-
-
 const buy = createOrder(cart); //here buy is retured with the above created promise 
  console.log(buy);  //prints promise in pending state as promise have not yet executed (needs 5 secs in this case to finish)
 
@@ -107,38 +105,3 @@ buy.then( function(orderId){  // Whenever a promise is fulfilled and gets data ,
 
     
 // in next session we will dive deep into asynchronous functions , async await , their usage and comparison with promise syntax
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .catch(function (err){
-        console.log(err.message); 
-    })
-    
