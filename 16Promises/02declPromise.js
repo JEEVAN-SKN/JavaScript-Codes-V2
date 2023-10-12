@@ -31,7 +31,8 @@ function validateCart(cart){
 
    //   return false; //we'll get eroor with message "Cart is not valid" but this comes in browser console as an official js error
                 //user may not notice it, so we need to add catch block s in promise for error handling
-            // for error sample when catch block is not used refer image ""
+            // for error sample when catch block is not used refer image "16Promises/errnocatch.png"
+
         return true; // as we are just demonstrating , we return true so promise gets fulfilled 
                 // we'll get output 12345
 
@@ -50,5 +51,75 @@ buy.then( function(orderId){  // Whenever a promise is fulfilled and gets data ,
            // 12345
            // Promise { '12345' } //refer image "16Promises/browseroutput.png" fir chrome browser console output 
 .catch(function (err){
-    console.log(err.message);
+    console.log(err.message);  // now after using catch block we wont get normal js error instead get response as we intended 
+                    //refer image "16Promises/errwitcatch.png"
 })
+
+
+// Now we will look upon Promise Chaining 
+    //we can keep on adding .then for more operations to be done thru promise when we get data 
+
+    //lets create another promise with different name similar to abive with some added functionalities 
+
+    function Order (cart) {
+        return new Promise(function (resolve, reject){  
+            // createOrder logic
+            // validateCart logic 
+            // we get orderId 
+            if(!validateCart(cart)){  
+                const err = new Error("Cart is not valid");  
+                reject(err);
+            }
+            const orderId = "12345";
+            if (orderId){
+                setTimeout(function (){
+                    resolve(orderId);   
+                },5000)
+            }
+        });
+    };
+    //lets create on another function to add more operations for ".then"
+   
+    const purchase = createOrder(cart);   
+
+    buy
+    .then( function(orderId){                                                                                    
+        console.log(orderId);  
+        console.log(purchase); 
+    }) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    .catch(function (err){
+        console.log(err.message); 
+    })
+    
