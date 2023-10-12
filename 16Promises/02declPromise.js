@@ -106,7 +106,7 @@ buy.then( function(orderId){  // Whenever a promise is fulfilled and gets data ,
                             // therefore catch block can only stop the .then executions above it, it's error cannot block the .then executions below it
 
     
-
+// in next session we will dive deep into asynchronous functions , async await , their usage and comparison with promise syntax
 
 
 
