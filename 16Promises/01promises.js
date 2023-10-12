@@ -4,7 +4,7 @@
 //Callback example 
 // const cart = ['shoes', 'pants', 'kurta']
 
-// // let ther be an api which takes care of all tasks
+// // let there be an api which takes care of all tasks
 //  api.createOrder(cart, function() {  //here we gave payment func as callback inside createOrder so only after createOrder payment func is called 
 
 //      api.proceedToPayment( function() {
