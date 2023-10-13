@@ -33,6 +33,9 @@ console.log("hi hello");  //this will be printed at first itself before any exec
 //     const val2 = await p2;  // needs 10 secs so suspended for 10 sec and then after promise resolved execution resumed
 //     console.log(val2);
 
+            //here eventhough the below p1 is resolved earlier than above p2, js cannot jump into p1 for that sake
+                    //because js is a synchronous language too
+
 //     const val1 = await p1; //when js comes here this timer only need 5 secs to expire but already 10 sec gone in above promise resolving 
                         //therefore here too timer expired and promise resolved hence js doesnt wait for any more time 
 //     console.log(val1);  //and directly prints it after val2 is printed 
@@ -45,4 +48,3 @@ console.log("hi hello");  //this will be printed at first itself before any exec
 //All these changed can be seen keen in the browser console by placing  debuggers in js code in Sourced area and 
     //checking over the callstack and scope over each specific running till the placed debuggers 
 
-    
