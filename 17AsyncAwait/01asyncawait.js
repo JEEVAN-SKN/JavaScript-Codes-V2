@@ -12,6 +12,10 @@ async function getData(){
     return "Namaste"  //we can either create and return a promise or inut anything u want which will be eventually wrapped inside a promise
 }
 
-const Async = getData();
+const AsyncData = getData();
 console.log(Async);  //output: Promise { 'Namaste' } //eventhough we gave a string in definiton it wrapped it in a promise 
+
+AsyncData.then(function(result){ //as AsyncData contains a promise we can use '.then' on it 
+    console.log(result);  //outputs the data of the promise inside AsyncData
+})
 
