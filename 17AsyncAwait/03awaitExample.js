@@ -37,4 +37,7 @@ console.log("hi hello");  //this will be printed at first itself before any exec
                         //therefore here too timer expired and promise resolved hence js doesnt wait for any more time 
 //     console.log(val1);  //and directly prints it after val2 is printed 
 // } 
-// handlePromiseBA()
+// handlePromiseBA()//and directly prints it after val2 is printed 
+
+// in above explanation when i say function is suspended, it means that the respective function gets out of callstack,
+        //once await method promise is resolved or timer is expires, the function is resumed (i.e) the function comes back into calstack
