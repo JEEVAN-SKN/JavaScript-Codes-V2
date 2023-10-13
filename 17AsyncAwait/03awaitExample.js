@@ -41,3 +41,8 @@ console.log("hi hello");  //this will be printed at first itself before any exec
 
 // in above explanation when i say function is suspended, it means that the respective function gets out of callstack,
         //once await method promise is resolved or timer is expires, the function is resumed (i.e) the function comes back into calstack
+
+//All these changed can be seen keen in the browser console by placing  debuggers in js code in Sourced area and 
+    //checking over the callstack and scope over each specific running till the placed debuggers 
+
+    
