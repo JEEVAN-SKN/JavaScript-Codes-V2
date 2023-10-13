@@ -47,3 +47,4 @@ console.log("hi hello");  //this will be printed at first itself before any exec
 
 //All these changed can be seen keen in the browser console by placing  debuggers in js code in Sourced area and 
     //checking over the callstack and scope over each specific running till the placed debuggers 
+        //for viewing the function coming up in callstack clearly increase the timer to 20 or 30 seconds(it becomes slower so that u can observe)
