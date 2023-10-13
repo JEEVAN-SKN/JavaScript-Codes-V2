@@ -42,6 +42,9 @@ recievedData.then((res)=>{
     //async and await is used to handle promises but we already have ".then" and ".catch"
             // to understand the difference we need to know how they are used and whayt is the difference between them
 
+//we saw in the past session that promises are only executed after al synchronous executions are done and the call sctak is empty 
+//but the difference in await is that js call stack waits till the function called thru await is executed 
+
 const p = new Promise(function (resolve,reject){
     resolve("asyncawait vs .then/.catch");
 })
@@ -51,10 +54,14 @@ p.then(function(res){
     console.log(res);
 });
 
-//async fashion
+   //when js executes both the recieveData which is promise retunred thru async function and the abovr p.then , js detects thses two are asynchronous func and thus gives it to the web api 
+                        //even if it is called by the we api and put in the queue , event loop only executes it after executing all other synchronous executions 
+//  async await fashion                       
 async function Done() {
     const d = await p;
     console.log(d);
 }
 Done();
+
+console.log("this will be executed before all promise based execution which are asynchronous ")
 
