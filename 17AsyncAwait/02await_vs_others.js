@@ -42,5 +42,4 @@ async function Data(){
     console.log("hi hello");
 
 }
-
 Data()
