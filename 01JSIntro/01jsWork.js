@@ -19,7 +19,7 @@
 
 
 
-//Note in our next session when we illustrate more than one concepts or example , I may have commented out some code for less 
+//Note in our session when we illustrate more than one concepts or example , I may have commented out some code for less 
         // confusion in console while execution
     //try commenting in and out each part individually for checking out their individual execution in console
 
