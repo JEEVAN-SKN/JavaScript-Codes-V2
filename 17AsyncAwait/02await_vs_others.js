@@ -3,6 +3,7 @@
 //             //note that it doesnt stop all other sync function or code of the whole code 
 //                     //it just stops the exectuion of other code inside the async function block {}
 
+//please comment out each section to check their exectuion individauly for less confusion 
 
 const p = new Promise((resolve,reject)=>{
     setTimeout(() => {
