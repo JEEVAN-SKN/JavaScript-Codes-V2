@@ -4,6 +4,9 @@
     // examples,behind working and error handlig in async await
     // Async await vs Promise.then/.catch
 
+
+//What is async:
+
 //async is a keyword to create a async function 
 //async function always returns a promise -> that is, in the function definiton we can either create and return a promise
                                     //or u can return whatever u want(string or number) but async wraps it in a promise and retunrs it 
@@ -33,3 +36,25 @@ const recievedData = recieveData();
 recievedData.then((res)=>{
     console.log(res) // output: this promise is resolved
 })
+
+//What is await:
+    //await can only be used inside a async function
+    //async and await is used to handle promises but we already have ".then" and ".catch"
+            // to understand the difference we need to know how they are used and whayt is the difference between them
+
+const p = new Promise(function (resolve,reject){
+    resolve("asyncawait vs .then/.catch");
+})
+
+// .then fashion
+p.then(function(res){
+    console.log(res);
+});
+
+//async fashion
+async function Done() {
+    const d = await p;
+    console.log(d);
+}
+Done();
+
