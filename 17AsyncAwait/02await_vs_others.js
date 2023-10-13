@@ -54,4 +54,4 @@ async function Data(){
 }
 Data()
 
-//Lets see a more complex example for understanding multiple 
+//In next session we'll see a more complex example for multiple await in single async function working 
