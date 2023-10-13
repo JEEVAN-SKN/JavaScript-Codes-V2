@@ -13,9 +13,21 @@ async function getData(){
 }
 
 const AsyncData = getData();
-console.log(Async);  //output: Promise { 'Namaste' } //eventhough we gave a string in definiton it wrapped it in a promise 
+console.log(AsyncData);  //output: Promise { 'Namaste' } //eventhough we gave a string in definiton it wrapped it in a promise 
 
 AsyncData.then(function(result){ //as AsyncData contains a promise we can use '.then' on it 
     console.log(result);  //outputs the data of the promise inside AsyncData
 })
 
+//what if we retunr an already declared promise inside an async function? does it again wrap the input promise inside another promise??
+
+const pr = new Promise(function (resolve,reject){
+    resolve("this promise is resolved")
+})
+
+async function recieveData(){
+    return pr;
+}
+
+const recievedData = recieveData();
+console.log(recieveData);
