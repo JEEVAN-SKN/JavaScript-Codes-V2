@@ -29,14 +29,14 @@ const p = new Promise((resolve,reject)=>{
 //using two await methods in an async function 
 
 async function Data(){
-    const a = await p   //we may think first await waits for 5 secs executes then 2nd await waits for 5 seconds and executes 
-    console.log(a);         //but both await function execute at same time though execution is done line by line
+    const val1 = await p   //we may think first await waits for 5 secs executes then 2nd await waits for 5 seconds and executes 
+    console.log(val1);         //but both await function execute at same time though execution is done line by line
                                     //line be line i mean print (p) then hi hello ,then (p) again then he hello
                                             // but all these execute at same time after 5 second timer in js
-    console.log("hi hello");  
+    console.log("hi hello");                //al await in async function run parallel
 
-    const b = await p 
-    console.log(b);
+    const val2 = await p 
+    console.log(val2);
 
     console.log("hi hello");
 
