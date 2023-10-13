@@ -38,4 +38,3 @@ console.log("hi hello");  //this will be printed at first itself before any exec
 //     console.log(val1);  //and directly prints it after val2 is printed 
 // } 
 // handlePromiseBA()
-
