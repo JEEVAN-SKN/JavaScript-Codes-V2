@@ -9,6 +9,9 @@
                                     //or u can return whatever u want(string or number) but async wraps it in a promise and retunrs it 
 
 async function getData(){
-
+    return "Namaste"  //we can either create and return a promise or inut anything u want which will be eventually wrapped inside a promise
 }
+
+const Async = getData();
+console.log(Async);  //output: Promise { 'Namaste' } //eventhough we gave a string in definiton it wrapped it in a promise 
 
