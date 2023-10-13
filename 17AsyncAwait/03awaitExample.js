@@ -34,7 +34,7 @@ console.log("hi hello");  //this will be printed at first itself before any exec
 //     console.log(val2);
 
             //here eventhough the below p1 is resolved earlier than above p2, js cannot jump into p1 for that sake
-                    //because js is a synchronous language too
+                    //because js is a synchronous language too(line by line)
 
 //     const val1 = await p1; //when js comes here this timer only need 5 secs to expire but already 10 sec gone in above promise resolving 
                         //therefore here too timer expired and promise resolved hence js doesnt wait for any more time 
