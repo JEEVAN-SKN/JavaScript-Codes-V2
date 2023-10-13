@@ -38,7 +38,7 @@ recievedData.then((res)=>{
 })
 
 //What is await:
-    //await can only be used inside a async function,-->it makes js to wait for completion of async function
+    //await can only be used inside a async function,-->it makes js to wait for completion of async method in the function
     //async and await is used to handle promises but we already have ".then" and ".catch"
             // to understand the difference we need to know how they are used and whayt is the difference between them
 
