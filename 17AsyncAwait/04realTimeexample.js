@@ -24,6 +24,5 @@ async function handlePromise(){
   console.log(jsonValue);
 
 }
-handlePromise();
 
 
