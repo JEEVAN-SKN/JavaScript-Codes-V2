@@ -41,6 +41,22 @@ async function handlePromise(){ //as await is called handlePromise is suspended 
 }
 handlePromise();
 
+// traditional way of error handling in async await 
+        //we dont use the try and cathc block 
+            //WKT that an async function always returns a promise so using the asynfuncname.catch() we can handle the error in the promises 
+
+    // handlePromise().catch((err)=> console.log(err));
+
+    //you can choose either try,cathc block or olde style asyncfuncname.catch() method
 
 
 
+//Interview Tips 
+    // point to eloborate (never forget)
+
+        // diff btw 'async' keyword and asynchronous functions 
+            // 'async' is a keyword used with function to make them async and tell them that asynchronous functions are different
+    
+        // await can only be used inside asynd function and they are used to handle promises which are asynchronous
+
+                
