@@ -33,8 +33,10 @@ async function handlePromise(){ //as await is called handlePromise is suspended 
     
     console.log(jsonValue); //printing the result into console
     }
-    catch (err){
-        console.log(err);
+    catch (err){  // if any of the await function fail in try block it just jumps to catch block
+        console.log(err);   //it will get the error and prints it in console 
+                    //without this only browser error will show up in console
+                        //but with catch block u can manipulate whatever u want to do incase of error
     }
 }
 handlePromise();
