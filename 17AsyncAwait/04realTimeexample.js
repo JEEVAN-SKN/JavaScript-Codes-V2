@@ -12,21 +12,33 @@
     // "user_url"="https://api.github.com/users/{user}"
         //hence to get my gihtub account details url is "https://api.github.com/users/JEEVAN-SKN"
 
+//Error handling in async await 
+        // Although we can still use the .catch method of promise in async await too but the recommeded style in async await is try and catch block
+        // We put the code to be executed in try block and the code for error scenarios in catch block
+
+
+
 //making api call to the url
 const API_URL = "https://api.github.com/users/JEEVAN-SKN";
 
 async function handlePromise(){ //as await is called handlePromise is suspended till await function is done resolved or rejected 
 
-  const data = await fetch(API_URL);   //fetch() retunrs api result which is response object which inturn saved in 'data'
+    try {
+    const data = await fetch(API_URL);   //fetch() retunrs api result which is response object which inturn saved in 'data'
 
-        //We can convert object response body which is a readable stream into json - data.json (we can also convert into string or text) 
-            // here we know that this github api gives result as json hence we use 'data.json'
-                //data.json also gives us a promise as return hence we need to use await to resolve it further 
-  const jsonValue = await data.json();  // handlePromise suspended toll data.json is resolved or rejected inwhich result is stored in jsonValue 
-  
-  console.log(jsonValue);
-
+            //We can convert object response body which is a readable stream into json - data.json (we can also convert into string or text) 
+                // here we know that this github api gives result as json hence we use 'data.json'
+                    //data.json also gives us a promise as return hence we need to use await to resolve it further 
+    const jsonValue = await data.json();  // handlePromise suspended toll data.json is resolved or rejected inwhich result is stored in jsonValue 
+    
+    console.log(jsonValue); //printing the result into console
+    }
+    catch (err){
+        console.log(err);
+    }
 }
 handlePromise();
+
+
 
 
