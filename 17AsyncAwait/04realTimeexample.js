@@ -59,4 +59,13 @@ handlePromise();
     
         // await can only be used inside asynd function and they are used to handle promises which are asynchronous
 
-                
+
+//Async await vs Promise.then/catch
+    //async await is just a syntactic sugar over the promise.then and catch
+        //behind the scenes js just executed these stuff in promise.then and catch even if we use async and await 
+
+    //both are same in terms of execution in backend but async await gives us less confusion in written code
+
+        //another adv of using async await is we dont have to deal with callback
+            //we need to use promise chaining to hanlde all callbacks but here in wriiten code we dont need to handle them
+             // It is direclty handled by async await usage which executes in promise.then and .catch fashion
