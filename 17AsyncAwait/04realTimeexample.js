@@ -68,4 +68,4 @@ handlePromise();
 
         //another adv of using async await is we dont have to deal with callback
             //we need to use promise chaining to hanlde all callbacks but here in wriiten code we dont need to handle them
-             // It is direclty handled by async await usage which executes in promise.then and .catch fashion
+             // It is direclty handled by async await usage which executes in promise.then and .catch fashion in the backend
