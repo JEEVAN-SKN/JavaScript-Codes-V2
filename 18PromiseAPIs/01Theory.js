@@ -21,43 +21,31 @@
     // Therefore it gives collective result only after waiting for all promise which should get resolved or else it shows the error of the first promise
     //                 which get rejected and stops the processes (it is kind of a failfast approach)
 
-// B:: 
+// B::  promise.allSetted - same as promise.anu but gives even failure results so no one is skipped
+
      promise.allSettled([p1,p2,p3]) //p1,p2,p3 -- 3,2,5 seconds
     //It doesnt care about success or failure, It waits for all promises to get settled and give their respective reject or resolve responses 
 //     //If p2 success , then it moves forward and if p1 fail (promise.all would have ignore p2 success and only show p1 failure and doesnt wait for p3 to get settled)
             //but in case of promise.allSettled it waits for all to get settled and give all responses(resolve or reject) in an array
     //SUCCESS or FAILURE -- gives all responses 
 
-// C:: 
+// C:: Promise.race -- gives a single result of first settled promise(promise.allSettled but for only give one response which is first one to get settled
+                                // all others are skipped )
+
     promise.race([p1,p2,p3])  //p1,p2,p3 -- 3,2,5 seconds
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
+        //It gives the result of the first settled promise out of all( it is a race scenario where the status of first one to get settled is provided with)
+            //either reject or resolve it gives the result of the first settled promise 
+                    //thereofore it takes in an iterable of promises and gives out a single response of the first settled promise 
+        //SUCCESS or FAILURE -- gives single result of first settled promise 
+                        //all other promises are not even waited for to get settled here as we already got a settled promise //
+
+
+// D::  Promise.any ( same as promise.race but only wants successful response so if failure skips and goes to next)
+                    // (if all failure gives array of failure of all rejected promises)
+        promise.any([p1,p2,p3])  //p1,p2,p3 --3,2,5 seconds
+
+//  If p2 gets resolved in 2s then gives it as result but if it fails then waits for next p3 to get settled, if p3 resolved then gives p3 response
+        // in case all fails then gives "aggregate error" which is an array of all the errors 
+    
+    //It is a single success seeking promise out of all given promises which waits for first success
+
