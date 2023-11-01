@@ -10,7 +10,7 @@
 
 //A:: Promise.all()  - used to make multiple parallel api calls and get result at once
 //   It takes a Iterable of promises as input (iterable refers to an array)
-   promise.all([p1,p2,p3]); //let p1,p2,p3 take 3,2,5 secs each to resolve
+    Promise.all([p1,p2,p3]); //let p1,p2,p3 take 3,2,5 secs each to resolve
 //    SUCCESS case:    
             // then promise.all waits for whole 5 seconds till all get resolved and gives the result as an array of all 3 promises
                     //p2 gets resolved in 2s but promise.all waits for others to get resolved too and give collective result as an array
@@ -23,7 +23,9 @@
 
 // B::  promise.allSetted - same as promise.anu but gives even failure results so no one is skipped
 
-     promise.allSettled([p1,p2,p3]) //p1,p2,p3 -- 3,2,5 seconds
+    Promise.allSettled([p1,p2,p3]) //p1,p2,p3 -- 3,2,5 seconds  
+// NOTE : Promise.allSettled is the safest version  of all promises to use in production
+
     //It doesnt care about success or failure, It waits for all promises to get settled and give their respective reject or resolve responses 
 //     //If p2 success , then it moves forward and if p1 fail (promise.all would have ignore p2 success and only show p1 failure and doesnt wait for p3 to get settled)
             //but in case of promise.allSettled it waits for all to get settled and give all responses(resolve or reject) in an array
@@ -32,7 +34,7 @@
 // C:: Promise.race -- gives a single result of first settled promise(promise.allSettled but for only give one response which is first one to get settled
                                 // all others are skipped )
 
-    promise.race([p1,p2,p3])  //p1,p2,p3 -- 3,2,5 seconds
+    Promise.race([p1,p2,p3])  //p1,p2,p3 -- 3,2,5 seconds
         //It gives the result of the first settled promise out of all( it is a race scenario where the status of first one to get settled is provided with)
             //either reject or resolve it gives the result of the first settled promise 
                     //thereofore it takes in an iterable of promises and gives out a single response of the first settled promise 
@@ -42,7 +44,7 @@
 
 // D::  Promise.any ( same as promise.race but only wants successful response so if failure skips and goes to next)
                     // (if all failure gives array of failure of all rejected promises)
-        promise.any([p1,p2,p3])  //p1,p2,p3 --3,2,5 seconds
+    Promise.any([p1,p2,p3])  //p1,p2,p3 --3,2,5 seconds
 
 //  If p2 gets resolved in 2s then gives it as result but if it fails then waits for next p3 to get settled, if p3 resolved then gives p3 response
         // in case all fails then gives "aggregate error" which is an array of all the errors 
