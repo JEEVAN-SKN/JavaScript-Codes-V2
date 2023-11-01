@@ -70,7 +70,7 @@ const p3 = new Promise((resolve, reject) => {
 //p2 is rejected 
 
 // Promise.allSettled
-
+            // the safest version of all promises 
 Promise.allSettled([p1, p2, p3])
 .then((res) => {
     console.log(res);     //output: [
