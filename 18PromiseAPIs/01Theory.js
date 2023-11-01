@@ -49,3 +49,4 @@
     
     //It is a single success seeking promise out of all given promises which waits for first success
 
+// in next session we will implement and simulate these promise API's through code 
