@@ -1,5 +1,6 @@
 //comment out and in each section to execute them individually
 
+//---------------------------------------------------
 //Promise.all CASE:ALL SUCCESS
 
 // const p1 = new Promise((resolve, reject) => {
@@ -21,7 +22,7 @@
 // Promise.all([p1, p2, p3]).then((res) => {
 //     console.log(res);     //output: [ 'P1 Success', 'P2 Success', 'P3 Success' ]
 // });
-
+//----------------------------------------------------------
 
 //Promise.all CASE:Failure of one 
 
@@ -50,36 +51,40 @@
 //     console.error(err);  // prints the error message in console like a error (not uncaught but caught error)
 // })
 
+//------------------------------------------------------------
 
-
-
+//Promise.allSettled
 // same failure case in Promise.allSettled 
 
-const p1 = new Promise((resolve, reject) => {
-    setTimeout(() => resolve("P1 Success"),3000);
-})
+// const p1 = new Promise((resolve, reject) => {
+//     setTimeout(() => resolve("P1 Success"),3000);
+// })
 
-const p2 = new Promise((resolve, reject) => {
-    setTimeout(() => reject("P2 Fail"),5000);
-})
+// const p2 = new Promise((resolve, reject) => {
+//     setTimeout(() => reject("P2 Fail"),5000);
+// })
 
-const p3 = new Promise((resolve, reject) => {
-    setTimeout(() => resolve("P3 Success"),2000);
-})
+// const p3 = new Promise((resolve, reject) => {
+//     setTimeout(() => resolve("P3 Success"),2000);
+// })
 
-//p2 is rejected 
+// //p2 is rejected 
 
-// Promise.allSettled
-            // the safest version of all promises 
-Promise.allSettled([p1, p2, p3])
-.then((res) => {
-    console.log(res);     //output: [
-                                //     { status: 'fulfilled', value: 'P1 Success' },
-                                //     { status: 'rejected', reason: 'P2 Fail' },
-                                //     { status: 'fulfilled', value: 'P3 Success' }
-                                //   ]
-})
-.catch((err) => {  //we do this to catch th error give a defined response or else uncaught error will display in console in browser(we catch the uncaught error)
-    // console.log(err);     // just prints the error message like a text
-    console.error(err);  // prints the error message in console like a error (not uncaught but caught error)
-})
+// // Promise.allSettled
+//             // the safest version of all promises 
+// Promise.allSettled([p1, p2, p3])
+// .then((res) => {
+//     console.log(res);     //output: [  // in browser each array eleemnt is an object which if success contains status and value
+//                                         // or if it is failure it conatains a status and reason(which is the catch error content)
+//                                 //     { status: 'fulfilled', value: 'P1 Success' },
+//                                 //     { status: 'rejected', reason: 'P2 Fail' },
+//                                 //     { status: 'fulfilled', value: 'P3 Success' }
+//                                 //   ]  
+// })
+// .catch((err) => {  //we do this to catch th error give a defined response or else uncaught error will display in console in browser(we catch the uncaught error)
+//     // console.log(err);     // just prints the error message like a text
+//     console.error(err);  // prints the error message in console like a error (not uncaught but caught error)
+// })
+
+//------------------------------------------------------------------
+
